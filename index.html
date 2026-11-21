@@ -12,7 +12,6 @@
   body{font-family:'Inter',sans-serif;scroll-behavior:smooth;background:#f8fafc;color:#1e293b}
   .glass-nav{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.05)}
   .hero-gradient{background:linear-gradient(145deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);position:relative}
-  .hero-gradient::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233b82f6' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6z'/%3E%3C/g%3E%3C/svg%3E");opacity:.5}
   .card-hover{transition:all .3s cubic-bezier(.4,0,.2,1);border:1px solid rgba(0,0,0,.04)}
   .card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px -12px rgba(0,0,0,.12);border-color:rgba(59,130,246,.2)}
   .fade-in{animation:fadeIn .6s cubic-bezier(.4,0,.2,1)}
@@ -37,27 +36,26 @@
   .lang-modal.visible{opacity:1;visibility:visible;pointer-events:auto}
   .cookie-bar{transform:translateY(100%);transition:transform .35s ease}
   .cookie-bar.show{transform:translateY(0)}
-  .faq-chevron{transition:transform .3s ease}
   .rotate-180{transform:rotate(180deg)}
-  @media(max-width:640px){.hero-title{font-size:2.1rem!important;line-height:1.2!important}.whatsapp-float{bottom:20px;right:20px}.whatsapp-float a{width:56px!important;height:56px!important}.whatsapp-float i{font-size:24px!important}}
+  .translating{opacity:.6;transition:opacity .2s}
+  @media(max-width:640px){.hero-title{font-size:2.1rem!important;line-height:1.2!important}.whatsapp-float{bottom:20px;right:20px}}
 </style>
 </head>
 <body>
 
-<!-- LANGUAGE / REGION MODAL -->
+<!-- LANGUAGE MODAL -->
 <div id="lang-modal" class="lang-modal hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
   <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full text-center fade-in">
     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
       <i class="fas fa-globe-americas text-blue-600 text-2xl"></i>
     </div>
-    <h3 class="text-xl font-bold mb-2 text-gray-800" data-key="modal_welcome">Welcome!</h3>
-    <p class="mb-6 text-gray-500 text-sm leading-relaxed">
-      <span data-key="modal_detected_prefix">We detected your region. Switch to</span>
-      <span id="detected-country" class="font-semibold text-blue-600"></span>?
+    <h3 class="text-xl font-bold mb-2 text-gray-800" id="modal-title">Welcome!</h3>
+    <p class="mb-6 text-gray-500 text-sm leading-relaxed" id="modal-text">
+      We detected your language: <span id="detected-country" class="font-semibold text-blue-600"></span>. Switch to it?
     </p>
     <div class="flex flex-col sm:flex-row justify-center gap-3">
-      <button onclick="closeLangModal(true)" class="btn-primary text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-sm" data-key="modal_yes">Yes, switch</button>
-      <button onclick="closeLangModal(false)" class="bg-gray-100 text-gray-600 px-6 py-2.5 rounded-xl text-sm font-medium hover:bg-gray-200 transition" data-key="modal_no">Stay in English</button>
+      <button onclick="closeLangModal(true)" class="btn-primary text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-sm" id="modal-yes">Yes, switch</button>
+      <button onclick="closeLangModal(false)" class="bg-gray-100 text-gray-600 px-6 py-2.5 rounded-xl text-sm font-medium hover:bg-gray-200 transition" id="modal-no">Stay in English</button>
     </div>
   </div>
 </div>
@@ -95,19 +93,15 @@
           <button onclick="toggleLangDropdown()" class="flex items-center gap-1.5 text-gray-500 hover:text-blue-600 text-sm font-medium px-2 py-1">
             <i class="fas fa-globe text-xs"></i><span id="current-lang">EN</span><i class="fas fa-chevron-down text-[10px]"></i>
           </button>
-          <div id="lang-dropdown" class="lang-dropdown absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl py-2 border border-gray-100 max-h-72 overflow-y-auto z-50">
-            <div id="language-list" class="flex flex-col"></div>
+          <div id="lang-dropdown" class="lang-dropdown absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-2 border border-gray-100 max-h-80 overflow-y-auto z-50">
+            <div class="px-3 pb-2 border-b border-gray-100">
+              <input id="lang-search" type="text" placeholder="Search language..." class="w-full text-sm px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-blue-400">
+            </div>
+            <div id="language-list" class="flex flex-col pt-1"></div>
           </div>
         </div>
-        <div class="hidden sm:flex items-center gap-2 bg-gray-50 rounded-full px-3 py-1.5 border border-gray-100">
-          <i class="fas fa-shield-alt text-emerald-500 text-xs"></i>
-          <span class="text-xs font-medium text-gray-500" data-key="nav_verified">Verified &amp; Insured</span>
-        </div>
-        <!-- WhatsApp ONLY (no call) -->
         <a href="https://wa.me/4367858226893" target="_blank" rel="noopener" class="btn-primary text-white text-sm font-medium px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl shadow-sm flex items-center gap-2">
-          <i class="fab fa-whatsapp text-sm"></i>
-          <span class="hidden sm:inline" data-key="nav_whatsapp">WhatsApp Us</span>
-          <span class="sm:hidden" data-key="nav_whatsapp_short">Chat</span>
+          <i class="fab fa-whatsapp text-sm"></i><span data-key="nav_whatsapp">WhatsApp</span>
         </a>
         <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 text-xl"><i class="fas fa-bars"></i></button>
       </div>
@@ -120,7 +114,7 @@
       <a href="#reviews" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_reviews">Reviews</a>
       <a href="#track" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_track">Track Order</a>
       <a href="#faq" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_faq">FAQ</a>
-      <a href="https://wa.me/4367858226893" target="_blank" class="block bg-green-500 text-white text-center py-2 rounded-full font-medium"><i class="fab fa-whatsapp mr-1"></i> <span data-key="nav_whatsapp">WhatsApp Us</span></a>
+      <a href="https://wa.me/4367858226893" target="_blank" class="block bg-green-500 text-white text-center py-2 rounded-full font-medium"><i class="fab fa-whatsapp mr-1"></i> <span data-key="nav_whatsapp">WhatsApp</span></a>
     </div>
   </div>
 </nav>
@@ -143,10 +137,7 @@
           <a href="https://wa.me/4367858226893" target="_blank" rel="noopener" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-7 py-3.5 rounded-xl text-center shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base transition">
             <i class="fab fa-whatsapp"></i><span data-key="hero_cta">Get a Free Quote</span>
           </a>
-          <a href="#services" class="btn-outline text-white/90 font-medium px-7 py-3.5 rounded-xl text-center flex items-center justify-center gap-2 text-sm sm:text-base" data-key="hero_cta2">
-            <span>Our Services</span>
-            <i class="fas fa-arrow-right text-xs"></i>
-          </a>
+          <a href="#services" class="btn-outline text-white/90 font-medium px-7 py-3.5 rounded-xl text-center flex items-center justify-center gap-2 text-sm sm:text-base" data-key="hero_cta2">Our Services</a>
         </div>
         <div class="flex items-center gap-6 sm:gap-8 mt-10 pt-8 border-t border-white/10">
           <div><div class="text-2xl sm:text-3xl font-bold stat-number">100%</div><div class="text-white/40 text-xs mt-1" data-key="stat_safe">Safe Delivery</div></div>
@@ -156,7 +147,7 @@
           <div><div class="text-2xl sm:text-3xl font-bold stat-number">4.9<span class="text-lg">★</span></div><div class="text-white/40 text-xs mt-1" data-key="stat_rating">Client Rating</div></div>
         </div>
       </div>
-      <div class="hidden lg:flex justify-center items-center fade-in" style="animation-delay:.15s">
+      <div class="hidden lg:flex justify-center items-center fade-in">
         <div class="relative">
           <div class="w-80 h-80 xl:w-96 xl:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
             <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Happy pets" class="w-full h-full object-cover">
@@ -164,10 +155,6 @@
           <div class="absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl flex items-center gap-3">
             <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center"><i class="fas fa-check-circle text-emerald-500"></i></div>
             <div><div class="text-sm font-semibold text-gray-800" data-key="hero_card_title">GPS Tracked</div><div class="text-xs text-gray-400" data-key="hero_card_sub">Live updates 24/7</div></div>
-          </div>
-          <div class="absolute -top-4 -right-4 bg-white rounded-xl p-3 shadow-lg">
-            <div class="flex items-center gap-1.5"><i class="fas fa-star star-rating text-xs"></i><i class="fas fa-star star-rating text-xs"></i><i class="fas fa-star star-rating text-xs"></i><i class="fas fa-star star-rating text-xs"></i><i class="fas fa-star star-rating text-xs"></i></div>
-            <div class="text-[10px] text-gray-400 mt-0.5" data-key="hero_rating_text">4.9 / 5.0 · 680+ reviews</div>
           </div>
         </div>
       </div>
@@ -178,7 +165,7 @@
 <!-- TRUST BAR -->
 <section class="bg-white py-6 border-b border-gray-100 relative z-10 -mt-1">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-certificate text-blue-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_1">Fully Licensed</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_1_sub">EU Pet Transport</div></div>
       <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-shield-alt text-emerald-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_2">Fully Insured</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_2_sub">€2M Coverage</div></div>
       <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-user-md text-purple-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_3">Vet Approved</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_3_sub">Certified Handlers</div></div>
@@ -227,14 +214,546 @@
   </div>
 </section>
 
-<!-- WHY US -->
-<section id="why-us" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<!-- REVIEWS -->
+<section id="reviews" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase" data-key="reviews_label">Testimonials</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 tracking-tight" data-key="reviews_title">What Our Customers Say</h2>
+      <p class="text-gray-400 text-sm sm:text-base" data-key="reviews_subtitle">Trusted by pet owners across Europe.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviews-container"></div>
+  </div>
+</section>
+
+<!-- TRACK -->
+<section id="track" class="py-16 sm:py-24 bg-gray-900 text-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight" data-key="track_title">Track Your Delivery</h2>
+      <p class="text-gray-400 text-sm sm:text-base" data-key="track_subtitle">Enter your Transport ID to see real-time status.</p>
+    </div>
+    <div class="bg-white/10 backdrop-blur-md p-2 rounded-full flex shadow-2xl border border-white/20 max-w-lg mx-auto">
+      <input type="text" id="tracking-input" placeholder="Transport ID (e.g. BA-12345)" class="bg-transparent border-none text-white placeholder-gray-400 px-6 py-3 w-full focus:outline-none font-mono">
+      <button onclick="trackOrder()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition" data-key="btn_track">Track</button>
+    </div>
+    <div id="tracking-result" class="hidden bg-white text-gray-800 rounded-2xl p-8 shadow-2xl mt-8 fade-in">
+      <div class="flex justify-between items-start mb-6 border-b pb-4">
+        <div><p class="text-sm text-gray-500 uppercase" data-key="track_status_label">Status</p><h3 class="text-2xl font-bold text-blue-600" id="track-status">In Transit</h3></div>
+        <div class="text-right"><p class="text-sm text-gray-500 uppercase" data-key="track_eta_label">Estimated Arrival</p><h3 class="text-xl font-bold text-gray-900" id="track-eta">2 Days</h3></div>
+      </div>
+      <div class="relative mb-8">
+        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200"><div id="progress-bar" style="width:60%" class="bg-blue-500 transition-all duration-1000"></div></div>
+        <div class="flex justify-between text-xs font-semibold text-gray-500 uppercase">
+          <span data-key="track_picked">Picked Up</span><span data-key="track_departed">Departed</span><span data-key="track_transit">Transit</span><span data-key="track_delivered">Delivered</span>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 flex items-start gap-4">
+        <div class="bg-blue-100 p-3 rounded-full text-blue-600 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+        <div><p class="font-bold text-gray-900" data-key="track_current">Current Location</p><p class="text-gray-600" id="track-location">Vienna, Austria</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-16 sm:py-24 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 tracking-tight" data-key="faq_title">Frequently Asked Questions</h2>
+      <p class="text-gray-400 text-sm sm:text-base" data-key="faq_subtitle">Everything you need to know.</p>
+    </div>
+    <div class="space-y-3" id="faq-container"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <div>
-        <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase" data-key="why_label">Why Choose Us</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4 tracking-tight" data-key="why_title">Europe's Most Trusted Pet Transport</h2>
-        <p class="text-gray-400 mb-8 text-sm sm:text-base leading-relaxed" data-key="why_subtitle">We treat every pet like our own.</p>
-        <div class="space-y-5">
-          <div class="flex gap-4"><div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5"><i class="fas fa-check text-blue-600 text-sm"></i></div><div><h4 class="text-sm font-bold text-gray-800" data-key="why_1_title">Licensed &amp; Fully Insured</h4><p class="text-xs text-gray-400 mt-1 leading-relaxed" data-key="why_1_desc">Compliant with all EU animal welfare regulations.</p></div></div>
-          <div class="flex gap-4"><div class="w-10 h-10 bg-emerald-50 rounded-x
+        <div class="flex items-center mb-4"><i class="fas fa-paw text-2xl text-blue-500 mr-2"></i><span class="font-bold text-xl">Bianka Animalier</span></div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6" data-key="footer_desc">Licensed across all EU states.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6" data-key="footer_links">Quick Links</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#home" class="hover:text-white transition" data-key="nav_home">Home</a></li>
+          <li><a href="#services" class="hover:text-white transition" data-key="nav_services">Services</a></li>
+          <li><a href="#fleet" class="hover:text-white transition" data-key="nav_fleet">Our Fleet</a></li>
+          <li><a href="#reviews" class="hover:text-white transition" data-key="nav_reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-6" data-key="footer_contact">Contact Us</h4>
+        <ul class="space-y-4 text-gray-400">
+          <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i><span data-key="footer_eu">Operating across all EU States</span></li>
+          <li class="flex items-center"><i class="fab fa-whatsapp mr-3 text-green-500"></i><a href="https://wa.me/4367858226893" target="_blank" class="hover:text-white transition">WhatsApp: +43 678 58226893</a></li>
+          <li class="flex items-center"><i class="fas fa-envelope mr-3 text-blue-500"></i><a href="mailto:Biankaanimalier@gmail.com" class="hover:text-white transition">Biankaanimalier@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <h4 class="font-bold text-lg mb-2" data-key="footer_urgent">Need Urgent Help?</h4>
+        <p class="text-gray-400 text-sm mb-4" data-key="footer_whatsapp">Chat on WhatsApp for instant replies.</p>
+        <a href="https://wa.me/4367858226893" target="_blank" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-3 rounded-lg font-bold transition"><i class="fab fa-whatsapp mr-2"></i> <span data-key="btn_chat">Start Chat</span></a>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm">© Bianka Animalier. All rights reserved.</p>
+      <div class="flex space-x-6 text-sm text-gray-500 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white" data-key="footer_privacy">Privacy Policy</a>
+        <a href="#" class="hover:text-white" data-key="footer_terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/4367858226893" target="_blank" class="whatsapp-float w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl hover:bg-green-600 transition"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+/* =========================================================
+   UNIVERSAL AUTO-TRANSLATE
+   Uses Google's public translate endpoint (no API key).
+   Translates any language the device uses, on the fly.
+   ========================================================= */
+
+// Base English strings (this is the source of truth)
+const EN = {
+  modal_title:"Welcome!",
+  modal_detected_prefix:"We detected your language:",
+  modal_detected_suffix:"Switch to it?",
+  modal_yes:"Yes, switch",
+  modal_no:"Stay in English",
+
+  cookie_text:"We use cookies to enhance your experience.",
+  cookie_accept:"Accept",
+  cookie_decline:"Decline",
+
+  nav_home:"Home", nav_services:"Services", nav_fleet:"Our Fleet", nav_reviews:"Reviews",
+  nav_track:"Track Order", nav_faq:"FAQ", nav_whatsapp:"WhatsApp",
+
+  hero_badge:"Trusted by 2,400+ families across Europe",
+  hero_title_1:"Safe, Stress-Free",
+  hero_title_2:"Pet Transport",
+  hero_subtitle:"Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.",
+  hero_cta:"Get a Free Quote",
+  hero_cta2:"Our Services",
+  hero_card_title:"GPS Tracked",
+  hero_card_sub:"Live updates 24/7",
+
+  stat_safe:"Safe Delivery", stat_pets:"Happy Pets", stat_rating:"Client Rating",
+
+  trust_1:"Fully Licensed", trust_1_sub:"EU Pet Transport",
+  trust_2:"Fully Insured", trust_2_sub:"€2M Coverage",
+  trust_3:"Vet Approved", trust_3_sub:"Certified Handlers",
+  trust_4:"GPS Tracked", trust_4_sub:"Real-time Updates",
+
+  services_label:"What We Offer",
+  services_title:"Professional Pet Transport Services",
+  services_subtitle:"From short local trips to cross-border relocations.",
+  step1_title:"1. Gentle Pickup", step1_desc:"Our trained agents collect your pet with care.",
+  step2_title:"2. Safe Transport", step2_desc:"Climate-controlled vehicles with regular stops.",
+  step3_title:"3. Happy Arrival", step3_desc:"Door-to-door delivery, comfortable and happy.",
+
+  fleet_label:"Our Vehicles",
+  fleet_title:"Our Pet Delivery Fleet",
+  fleet_subtitle:"Specialized vehicles for safe transport.",
+  fleet_van:"Pet Delivery Van", fleet_van_desc:"Climate controlled & GPS tracked",
+  fleet_agent:"Professional Agents", fleet_agent_desc:"Trained pet handlers",
+  fleet_carrier:"Secure Carriers", fleet_carrier_desc:"IATA approved crates",
+  fleet_truck:"Long Distance Trucks", fleet_truck_desc:"For cross-country moves",
+  fleet_door:"Door-to-Door Service", fleet_door_desc:"We bring pets to your home",
+  fleet_happy:"Happy Arrivals", fleet_happy_desc:"Safe and stress-free",
+
+  reviews_label:"Testimonials",
+  reviews_title:"What Our Customers Say",
+  reviews_subtitle:"Trusted by pet owners across Europe.",
+
+  track_title:"Track Your Delivery",
+  track_subtitle:"Enter your Transport ID to see real-time status.",
+  track_status_label:"Status",
+  track_eta_label:"Estimated Arrival",
+  track_picked:"Picked Up", track_departed:"Departed",
+  track_transit:"Transit", track_delivered:"Delivered",
+  track_current:"Current Location",
+  btn_track:"Track",
+
+  faq_title:"Frequently Asked Questions",
+  faq_subtitle:"Everything you need to know.",
+
+  footer_desc:"Licensed across all EU states.",
+  footer_links:"Quick Links", footer_contact:"Contact Us",
+  footer_eu:"Operating across all EU States",
+  footer_urgent:"Need Urgent Help?",
+  footer_whatsapp:"Chat on WhatsApp for instant replies.",
+  footer_privacy:"Privacy Policy", footer_terms:"Terms of Service",
+  btn_chat:"Start Chat"
+};
+
+const EN_REVIEWS = [
+  {name:"Maria G.", location:"Madrid, Spain", text:"Bianka Animalier delivered my Golden Retriever puppy from Germany to Spain in perfect condition. The driver sent photos every few hours!"},
+  {name:"Thomas B.", location:"Vienna, Austria", text:"I was nervous about shipping my cat across Europe, but the team was incredibly professional. The tracking feature gave me peace of mind."},
+  {name:"Sophie L.", location:"Rome, Italy", text:"Our two French Bulldogs arrived safely from Paris to Rome. The drivers clearly love animals and played with them during rest stops!"},
+  {name:"Jan D.", location:"Amsterdam, Netherlands", text:"Fast, reliable, and caring. My parrot arrived in Amsterdam from Lisbon with all documentation handled perfectly."},
+  {name:"Anna K.", location:"Berlin, Germany", text:"The WhatsApp updates were fantastic! I knew exactly where my puppy was at all times. From Warsaw to Berlin in just 2 days."},
+  {name:"Lars N.", location:"Copenhagen, Denmark", text:"Professional service from start to finish. They handled all the EU pet passport paperwork and delivered my dog safely."}
+];
+
+const EN_FAQ = [
+  {q:"Is pet transport safe?", a:"Absolutely. We use specialized climate-controlled vehicles and partner with licensed veterinary professionals."},
+  {q:"Do you handle paperwork?", a:"Yes, we handle all necessary documentation including EU Pet Passports, health certificates, and customs clearance."},
+  {q:"How long does transport take?", a:"Delivery times vary. Typically 2-5 business days within the EU with real-time tracking."},
+  {q:"Do you sell pets?", a:"No, Bianka Animalier is strictly a logistics and transport company."},
+  {q:"Can I track my pet?", a:"Yes! We provide GPS tracking and regular photo updates via WhatsApp."},
+  {q:"What areas do you cover?", a:"All 27 EU member states, plus Switzerland, Norway, and the UK."},
+  {q:"How do I book?", a:"Contact us via WhatsApp at +43 678 58226893 or email Biankaanimalier@gmail.com."},
+  {q:"Do you offer insurance?", a:"Yes, all transports are fully insured."}
+];
+
+const reviewImages = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
+];
+
+const fleetImages = [
+  { img:"https://kimi-web-img.moonshot.cn/img/img.kwcdn.com/5934cfc6e700c26f13a0e81f0284f509b66dfd4f.png", fallback:"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_van", descKey:"fleet_van_desc" },
+  { img:"https://kimi-web-img.moonshot.cn/img/airpets.com/d371c13b6b501e99095a466b9055547911a06b8d.jpg", fallback:"https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_agent", descKey:"fleet_agent_desc" },
+  { img:"https://kimi-web-img.moonshot.cn/img/wp.vquip.com.au/25cd01a26c9e181062c1830746b40831a39891ac.jpg", fallback:"https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_carrier", descKey:"fleet_carrier_desc" },
+  { img:"https://kimi-web-img.moonshot.cn/img/www.adeopets.com/4731eeb6a0f683b0ec4ff7d93c7c3138123821f3.jpg", fallback:"https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_truck", descKey:"fleet_truck_desc" },
+  { img:"https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/d86e83c6259ea4230bd89233cb46d53bc04da2a0.jpg", fallback:"https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_door", descKey:"fleet_door_desc" },
+  { img:"https://kimi-web-img.moonshot.cn/img/tgs-group.com/83928ff9dfd809a38f2f5e0f9f63b4279d6bd743.jpg", fallback:"https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_happy", descKey:"fleet_happy_desc" }
+];
+
+/* --- Big list of languages so dropdown can show them all --- */
+const LANG_MAP = {
+  af:"Afrikaans", sq:"Shqip", am:"አማርኛ", ar:"العربية", hy:"Հայերեն", az:"Azərbaycan",
+  eu:"Euskara", be:"Беларуская", bn:"বাংলা", bs:"Bosanski", bg:"Български", ca:"Català",
+  ceb:"Cebuano", ny:"Chichewa", zh:"中文", co:"Corsu", hr:"Hrvatski", cs:"Čeština",
+  da:"Dansk", nl:"Nederlands", en:"English", eo:"Esperanto", et:"Eesti", tl:"Filipino",
+  fi:"Suomi", fr:"Français", fy:"Frysk", gl:"Galego", ka:"ქართული", de:"Deutsch",
+  el:"Ελληνικά", gu:"ગુજરાતી", ht:"Kreyòl ayisyen", ha:"Hausa", haw:"ʻŌlelo Hawaiʻi",
+  he:"עברית", hi:"हिन्दी", hmn:"Hmoob", hu:"Magyar", is:"Íslenska", ig:"Igbo",
+  id:"Indonesia", ga:"Gaeilge", it:"Italiano", ja:"日本語", jw:"Jawa", kn:"ಕನ್ನಡ",
+  kk:"Қазақ", km:"ខ្មែរ", rw:"Kinyarwanda", ko:"한국어", ku:"Kurdî", ky:"Кыргызча",
+  lo:"ລາວ", la:"Latina", lv:"Latviešu", lt:"Lietuvių", lb:"Lëtzebuergesch",
+  mk:"Македонски", mg:"Malagasy", ms:"Bahasa Melayu", ml:"മലയാളം", mt:"Malti",
+  mi:"Māori", mr:"मराठी", mn:"Монгол", my:"မြန်မာ", ne:"नेपाली", no:"Norsk",
+  or:"ଓଡ଼ିଆ", ps:"پښتو", fa:"فارسی", pl:"Polski", pt:"Português", pa:"ਪੰਜਾਬੀ",
+  ro:"Română", ru:"Русский", sm:"Gagana Samoa", gd:"Gàidhlig", sr:"Српски",
+  st:"Sesotho", sn:"Shona", sd:"سنڌي", si:"සිංහල", sk:"Slovenčina", sl:"Slovenščina",
+  so:"Soomaali", es:"Español", su:"Basa Sunda", sw:"Kiswahili", sv:"Svenska",
+  tg:"Тоҷикӣ", ta:"தமிழ்", tt:"Татарча", te:"తెలుగు", th:"ไทย", tr:"Türkçe",
+  tk:"Türkmen", uk:"Українська", ur:"اردو", ug:"ئۇيغۇرچە", uz:"Oʻzbek",
+  vi:"Tiếng Việt", cy:"Cymraeg", xh:"isiXhosa", yi:"יידיש", yo:"Yorùbá", zu:"Zulu"
+};
+
+let currentLang = 'en';
+let translatedStrings = { ...EN };           // current UI strings
+let translatedReviews = EN_REVIEWS;          // current reviews
+let translatedFAQ = EN_FAQ;                  // current FAQ
+
+/* --- In-memory cache so we only translate once per language --- */
+const translationCache = { en: { strings: { ...EN }, reviews: EN_REVIEWS, faq: EN_FAQ } };
+
+/* ============================================================
+   GOOGLE TRANSLATE (unofficial public endpoint - no API key)
+   ============================================================ */
+async function googleTranslate(text, targetLang){
+  if (!text || targetLang === 'en') return text;
+  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data[0].map(seg => seg[0]).join('');
+  } catch (e) {
+    console.warn('Translate failed:', text, e);
+    return text; // fallback to English on error
+  }
+}
+
+/* Translate a batch of strings in parallel */
+async function translateBatch(items, targetLang){
+  return Promise.all(items.map(item => googleTranslate(item, targetLang)));
+}
+
+/* Translate an array of {name, location, text} */
+async function translateReviews(reviews, targetLang){
+  const flat = [];
+  reviews.forEach(r => { flat.push(r.name, r.location, r.text); });
+  const out = await translateBatch(flat, targetLang);
+  const result = [];
+  for (let i = 0; i < reviews.length; i++){
+    result.push({
+      name: out[i*3],
+      location: out[i*3 + 1],
+      text: out[i*3 + 2]
+    });
+  }
+  return result;
+}
+
+async function translateFAQ(faqs, targetLang){
+  const flat = [];
+  faqs.forEach(f => { flat.push(f.q, f.a); });
+  const out = await translateBatch(flat, targetLang);
+  const result = [];
+  for (let i = 0; i < faqs.length; i++){
+    result.push({ q: out[i*2], a: out[i*2 + 1] });
+  }
+  return result;
+}
+
+/* ============================================================
+   APPLY LANGUAGE
+   ============================================================ */
+async function setLanguage(lang){
+  if (!lang) lang = 'en';
+  const isEn = (lang === 'en');
+
+  document.documentElement.lang = lang;
+  localStorage.setItem('preferredLang', lang);
+  document.getElementById('current-lang').innerText = lang.toUpperCase();
+
+  if (isEn){
+    translatedStrings = { ...EN };
+    translatedReviews = EN_REVIEWS;
+    translatedFAQ = EN_FAQ;
+    applyStrings();
+    renderFleet();
+    renderReviews();
+    renderFAQs();
+    return;
+  }
+
+  // If cached, use cache
+  if (translationCache[lang]){
+    translatedStrings = translationCache[lang].strings;
+    translatedReviews = translationCache[lang].reviews;
+    translatedFAQ = translationCache[lang].faq;
+    applyStrings();
+    renderFleet();
+    renderReviews();
+    renderFAQs();
+    return;
+  }
+
+  // Show loading feel
+  document.body.classList.add('translating');
+
+  // Translate all UI strings, reviews, FAQ
+  const keys = Object.keys(EN);
+  const stringValues = keys.map(k => EN[k]);
+
+  try {
+    const [translatedStringValues, tReviews, tFAQ] = await Promise.all([
+      translateBatch(stringValues, lang),
+      translateReviews(EN_REVIEWS, lang),
+      translateFAQ(EN_FAQ, lang)
+    ]);
+
+    const strings = {};
+    keys.forEach((k, i) => { strings[k] = translatedStringValues[i]; });
+
+    translationCache[lang] = { strings, reviews: tReviews, faq: tFAQ };
+
+    translatedStrings = strings;
+    translatedReviews = tReviews;
+    translatedFAQ = tFAQ;
+
+    applyStrings();
+    renderFleet();
+    renderReviews();
+    renderFAQs();
+  } catch (e) {
+    console.error('Translation failed, reverting to English', e);
+    translatedStrings = { ...EN };
+    translatedReviews = EN_REVIEWS;
+    translatedFAQ = EN_FAQ;
+    applyStrings();
+    renderFleet();
+    renderReviews();
+    renderFAQs();
+  } finally {
+    document.body.classList.remove('translating');
+  }
+}
+
+/* Apply translated strings to every [data-key] */
+function applyStrings(){
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const k = el.getAttribute('data-key');
+    if (translatedStrings[k] && typeof translatedStrings[k] === 'string'){
+      el.innerHTML = translatedStrings[k];
+    }
+  });
+
+  // Modal
+  document.getElementById('modal-title').innerText = translatedStrings.modal_title;
+  document.getElementById('modal-yes').innerText = translatedStrings.modal_yes;
+  document.getElementById('modal-no').innerText = translatedStrings.modal_no;
+
+  // Modal text is a composite — rebuild it
+  const detected = document.getElementById('detected-country').innerText;
+  document.getElementById('modal-text').innerHTML =
+    `${translatedStrings.modal_detected_prefix} <span class="font-semibold text-blue-600">${detected}</span> ${translatedStrings.modal_detected_suffix || ''}`;
+}
+
+/* ============================================================
+   RENDERERS
+   ============================================================ */
+function renderFleet(){
+  const t = translatedStrings;
+  document.getElementById('fleet-container').innerHTML = fleetImages.map(f => `
+    <div class="group relative overflow-hidden rounded-2xl shadow-lg h-80 card-hover">
+      <img src="${f.img}" alt="" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='${f.fallback}'">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+        <div class="text-white"><h3 class="font-bold text-xl">${t[f.titleKey]||f.titleKey}</h3><p class="text-sm text-gray-300">${t[f.descKey]||f.descKey}</p></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderReviews(){
+  document.getElementById('reviews-container').innerHTML = translatedReviews.map((r, i) => `
+    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+      <div class="flex items-center gap-1 mb-4">${'<i class="fas fa-star star-rating"></i>'.repeat(5)}</div>
+      <p class="text-gray-600 mb-6 italic">"${r.text}"</p>
+      <div class="flex items-center gap-4">
+        <img src="${reviewImages[i]}" alt="${r.name}" class="w-12 h-12 rounded-full object-cover">
+        <div><p class="font-bold text-gray-900">${r.name}</p><p class="text-sm text-gray-500">${r.location}</p></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderFAQs(){
+  document.getElementById('faq-container').innerHTML = translatedFAQ.map((f, i) => `
+    <div class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+      <button class="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition" onclick="toggleFaq(${i})">
+        <span class="font-semibold text-gray-800 pr-4">${f.q}</span>
+        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="fi-${i}"></i>
+      </button>
+      <div id="fa-${i}" class="hidden px-6 pb-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 bg-gray-50">${f.a}</div>
+    </div>
+  `).join('');
+}
+
+function toggleFaq(i){
+  document.querySelectorAll('[id^="fa-"]').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('[id^="fi-"]').forEach(el => el.classList.remove('rotate-180'));
+  const a = document.getElementById(`fa-${i}`);
+  const ic = document.getElementById(`fi-${i}`);
+  if (a.classList.contains('hidden')) { a.classList.remove('hidden'); ic.classList.add('rotate-180'); }
+}
+
+/* ============================================================
+   LANGUAGE DROPDOWN
+   ============================================================ */
+function populateLanguages(filter = ''){
+  const c = document.getElementById('language-list');
+  c.innerHTML = '';
+  Object.keys(LANG_MAP).forEach(code => {
+    const name = LANG_MAP[code];
+    if (filter && !name.toLowerCase().includes(filter.toLowerCase()) && !code.includes(filter.toLowerCase())) return;
+    const div = document.createElement('div');
+    div.className = "px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center justify-between text-gray-700 text-sm";
+    div.innerHTML = `<span>${name}</span><span class="text-[10px] text-gray-400 font-mono">${code.toUpperCase()}</span>`;
+    div.onclick = () => {
+      setLanguage(code);
+      document.getElementById('lang-dropdown').classList.remove('show');
+    };
+    c.appendChild(div);
+  });
+}
+
+function toggleLangDropdown(){
+  document.getElementById('lang-dropdown').classList.toggle('show');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.relative')) document.getElementById('lang-dropdown').classList.remove('show');
+});
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'lang-search') populateLanguages(e.target.value);
+});
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+function closeLangModal(shouldSwitch){
+  const m = document.getElementById('lang-modal');
+  m.classList.add('hidden');
+  if (!shouldSwitch) setLanguage('en');
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+function trackOrder(){
+  const v = document.getElementById('tracking-input').value.trim();
+  if (!v) return;
+  const r = document.getElementById('tracking-result');
+  r.classList.remove('hidden');
+  document.getElementById('progress-bar').style.width = (Math.floor(Math.random()*40)+40) + '%';
+  document.getElementById('track-eta').innerText = (Math.floor(Math.random()*3)+1) + " Days";
+  r.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function toggleMobileMenu(){ document.getElementById('mobile-menu').classList.toggle('hidden'); }
+function showCookieConsent(){ if (!localStorage.getItem('cookieConsent')) setTimeout(() => document.getElementById('cookie-consent').classList.add('show'), 1200); }
+function acceptCookies(){ localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookie-consent').classList.remove('show'); }
+function declineCookies(){ localStorage.setItem('cookieConsent','declined'); document.getElementById('cookie-consent').classList.remove('show'); }
+
+/* ============================================================
+   INIT — AUTO-DETECT + AUTO-TRANSLATE ANY DEVICE LANGUAGE
+   ============================================================ */
+async function init(){
+  populateLanguages();
+  applyStrings();          // start with English
+  renderFleet();
+  renderReviews();
+  renderFAQs();
+  showCookieConsent();
+
+  // 1. Already chosen a language?
+  const stored = localStorage.getItem('preferredLang');
+  if (stored && stored !== 'en'){
+    setLanguage(stored);
+    return;
+  }
+
+  // 2. Detect device language
+  const raw = navigator.language || navigator.userLanguage || 'en';
+  const deviceLang = raw.split('-')[0].toLowerCase();
+
+  if (deviceLang === 'en'){
+    setLanguage('en');
+    return;
+  }
+
+  // 3. Show modal with detected language name
+  const friendlyName = LANG_MAP[deviceLang] || raw;
+  document.getElementById('detected-country').innerText = friendlyName;
+  const modal = document.getElementById('lang-modal');
+  modal.classList.remove('hidden');
+
+  // 4. Auto-translate immediately (don't wait for the click)
+  await setLanguage(deviceLang);
+
+  // 5. Store so it's remembered
+  localStorage.setItem('preferredLang', deviceLang);
+}
+
+window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 50));
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
