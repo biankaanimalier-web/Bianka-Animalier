@@ -2,736 +2,606 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bianka Animalier | Europe's Trusted Pet Transport</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10243b">
+<meta name="description" content="Professional door-to-door pet transport across Europe with caring handlers and GPS updates.">
+<title>Bianka Animalier | Professional Pet Transport Across Europe</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',sans-serif;scroll-behavior:smooth;background:#f8fafc;color:#1e293b}
-  .glass-nav{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.05)}
-  .hero-gradient{background:linear-gradient(145deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);position:relative}
-  .card-hover{transition:all .3s cubic-bezier(.4,0,.2,1);border:1px solid rgba(0,0,0,.04)}
-  .card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px -12px rgba(0,0,0,.12);border-color:rgba(59,130,246,.2)}
-  .fade-in{animation:fadeIn .6s cubic-bezier(.4,0,.2,1)}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-  .star-rating{color:#f59e0b}
-  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px}
-  .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:50;animation:pulse 2.5s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 18px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-  .trust-badge{transition:all .25s ease}.trust-badge:hover{transform:scale(1.03)}
-  .section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(0,0,0,.08),transparent)}
-  .btn-primary{background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%);transition:all .25s ease}
-  .btn-primary:hover{background:linear-gradient(135deg,#1d4ed8 0%,#1e40af 100%);box-shadow:0 8px 24px -6px rgba(37,99,235,.4);transform:translateY(-1px)}
-  .btn-outline{border:1.5px solid rgba(255,255,255,.25);transition:all .25s ease}
-  .btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
-  .service-icon{transition:all .3s ease}
-  .card-hover:hover .service-icon{transform:scale(1.1);background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff}
-  .card-hover:hover .service-icon i{color:#fff}
-  .stat-number{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .lang-dropdown{display:none}
-  .lang-dropdown.show{display:block}
-  #lang-dropdown{
-    position:fixed;
-    top:auto;
-    right:12px;
-    left:auto;
-    width:min(320px, calc(100vw - 24px));
-    max-height:min(70vh, 460px);
-    overflow-y:auto;
-    z-index:70;
-    -webkit-overflow-scrolling:touch;
-  }
-  @media (max-width:640px){
-    #lang-dropdown{
-      right:8px;
-      width:calc(100vw - 16px);
-      max-height:60vh;
-    }
-  }
-  .lang-modal{transition:opacity .3s ease,visibility .3s ease}
-  .lang-modal.hidden{opacity:0;visibility:hidden;pointer-events:none}
-  .lang-modal.visible{opacity:1;visibility:visible;pointer-events:auto}
-  .cookie-bar{transform:translateY(100%);transition:transform .35s ease}
-  .cookie-bar.show{transform:translateY(0)}
-  .rotate-180{transform:rotate(180deg)}
-  .translating{opacity:.85;transition:opacity .2s}
-  @media(max-width:640px){.hero-title{font-size:2.1rem!important;line-height:1.2!important}.whatsapp-float{bottom:20px;right:20px}}
+:root{
+  --navy:#10243b;--navy-2:#173653;--blue:#2878d0;--blue-2:#1559a6;
+  --sky:#eaf4ff;--ink:#18283a;--muted:#667789;--line:#e4ebf2;
+  --paper:#f6f9fc;--white:#fff;--green:#20a66a;--shadow:0 18px 50px rgba(16,36,59,.10);
+  --radius:22px;--container:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--white);line-height:1.65;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+.container{width:min(var(--container),calc(100% - 44px));margin-inline:auto}
+.section{padding:88px 0}
+.section-soft{background:var(--paper)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.eyebrow:before{content:"";width:22px;height:2px;background:currentColor}
+.section-head{max-width:700px;margin:0 auto 46px;text-align:center}
+.section-head .eyebrow:before{display:none}
+.section-head h2{font:800 clamp(1.9rem,4vw,2.8rem)/1.16 Manrope,sans-serif;letter-spacing:-.045em;margin:14px 0;color:var(--navy)}
+.section-head p{color:var(--muted);font-size:1.02rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:12px;padding:13px 20px;font-weight:700;transition:.22s ease;min-height:48px}
+.btn-primary{background:var(--blue);color:white;box-shadow:0 9px 22px rgba(40,120,208,.2)}
+.btn-primary:hover{background:var(--blue-2);transform:translateY(-2px)}
+.btn-light{background:white;color:var(--navy)}
+.btn-outline{border:1px solid rgba(255,255,255,.36);color:white;background:rgba(255,255,255,.06)}
+.btn-outline:hover{background:rgba(255,255,255,.14)}
+:focus-visible{outline:3px solid #8fc5ff;outline-offset:3px}
+.topline{background:var(--navy);color:#dce8f4;font-size:.82rem;padding:8px 0}
+.topline-inner{display:flex;justify-content:space-between;gap:15px;align-items:center}
+.topline a{color:white;font-weight:700}
+.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,45,70,.08)}
+.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand-mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--navy-2));color:white;display:grid;place-items:center;font-size:1.12rem;box-shadow:0 8px 18px rgba(40,120,208,.2)}
+.brand-name{font:800 1.18rem Manrope,sans-serif;color:var(--navy);letter-spacing:-.04em}
+.brand-name span{color:var(--blue);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2vw,27px)}
+.nav-links a{font-size:.9rem;font-weight:700;color:#536579;transition:.2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang-wrap{position:relative}
+.lang-toggle{border:1px solid var(--line);background:white;border-radius:10px;padding:9px 11px;color:var(--navy);font-weight:800;font-size:.82rem}
+.lang-menu{display:none;position:absolute;right:0;top:calc(100% + 10px);width:min(310px,calc(100vw - 28px));max-height: min(65vh,430px);overflow:auto;background:white;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);padding:9px;z-index:50}
+.lang-menu.open{display:block}
+.lang-search{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px}
+.lang-option{width:100%;border:0;background:white;text-align:left;padding:9px 10px;border-radius:8px;display:flex;justify-content:space-between;gap:10px;color:var(--ink)}
+.lang-option:hover{background:var(--sky)}
+.lang-option small{color:#8795a4}
+.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--navy);font-size:1.1rem}
+.mobile-links{display:none;padding:0 22px 18px}
+.mobile-links.open{display:grid;gap:5px}
+.mobile-links a{padding:10px 4px;color:#536579;font-weight:700;border-bottom:1px solid var(--line)}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,rgba(10,29,49,.97),rgba(16,48,76,.88)),url("https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=2000&q=85") center/cover;color:white;padding:100px 0 94px}
+.hero:after{content:"";position:absolute;z-index:-1;width:550px;height:550px;border-radius:50%;right:-180px;top:-230px;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:62px}
+.hero-copy{max-width:650px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:99px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);font-size:.8rem;color:#e5f1fc;margin-bottom:24px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#49d99b;box-shadow:0 0 0 5px rgba(73,217,155,.13)}
+.hero h1{font:800 clamp(2.6rem,5.7vw,4.7rem)/1.08 Manrope,sans-serif;letter-spacing:-.06em;margin-bottom:22px}
+.hero h1 span{color:#83c5ff}
+.hero-copy>p{font-size:1.12rem;color:#c4d2df;max-width:550px;margin-bottom:30px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+.hero-stats{display:flex;gap:26px;margin-top:43px;padding-top:25px;border-top:1px solid rgba(255,255,255,.16)}
+.stat strong{display:block;font:800 1.55rem Manrope,sans-serif;color:white}
+.stat span{font-size:.78rem;color:#aebfd0}
+.hero-visual{position:relative;max-width:510px;margin-left:auto}
+.hero-photo{width:100%;aspect-ratio:4/4.15;object-fit:cover;border-radius:30px;border:7px solid rgba(255,255,255,.13);box-shadow:0 25px 70px rgba(0,0,0,.3)}
+.photo-note{position:absolute;left:-32px;bottom:28px;background:white;color:var(--navy);border-radius:15px;padding:15px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;max-width:245px}
+.note-icon{width:42px;height:42px;border-radius:12px;background:#e8f8f0;color:#15945b;display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
+.photo-note strong{display:block;font-size:.9rem}
+.photo-note small{display:block;color:var(--muted);font-size:.75rem}
+.trust-strip{background:white;border-bottom:1px solid var(--line);padding:25px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust-item{display:flex;align-items:center;justify-content:center;gap:12px}
+.trust-icon{width:43px;height:43px;border-radius:13px;background:var(--sky);color:var(--blue);display:grid;place-items:center;flex-shrink:0}
+.trust-item strong{display:block;font-size:.87rem;color:var(--navy)}
+.trust-item small{display:block;color:#8492a1;font-size:.74rem}
+.cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.service-card{padding:29px;border:1px solid var(--line);border-radius:var(--radius);background:white;box-shadow:0 5px 22px rgba(16,36,59,.035);transition:.25s}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c9e1fa}
+.service-icon{width:56px;height:56px;border-radius:16px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:1.35rem;margin-bottom:22px}
+.service-card h3{font:800 1.13rem Manrope,sans-serif;color:var(--navy);margin-bottom:9px}
+.service-card p{color:var(--muted);font-size:.93rem}
+.fleet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.fleet-card{position:relative;overflow:hidden;border-radius:18px;background:#dbe5ee;min-height:285px;box-shadow:0 8px 26px rgba(16,36,59,.09)}
+.fleet-card img{width:100%;height:100%;min-height:285px;object-fit:cover;transition:transform .5s}
+.fleet-card:hover img{transform:scale(1.045)}
+.fleet-card:after{content:"";position:absolute;inset:25% 0 0;background:linear-gradient(transparent,rgba(7,22,38,.88))}
+.fleet-caption{position:absolute;z-index:1;left:22px;right:22px;bottom:20px;color:white}
+.fleet-caption h3{font:800 1.15rem Manrope,sans-serif}
+.fleet-caption p{font-size:.85rem;color:#d2deea}.fleet-card.image-unavailable img{visibility:hidden}.fleet-card.image-unavailable{background:linear-gradient(135deg,#dbe5ee,#aebfce)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.review-card{padding:25px;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 6px 20px rgba(16,36,59,.035)}
+.stars{color:#f5a623;letter-spacing:2px;margin-bottom:13px}
+.review-card blockquote{font-size:.93rem;color:#536579;line-height:1.75;margin-bottom:20px}
+.reviewer{display:flex;align-items:center;gap:12px}
+.reviewer img{width:43px;height:43px;border-radius:50%;object-fit:cover}
+.reviewer strong{display:block;color:var(--navy);font-size:.88rem}
+.reviewer small{display:block;color:#8795a4;font-size:.76rem}
+.track-section{background:linear-gradient(120deg,#10243b,#183b5c);color:white}
+.track-panel{max-width:760px;margin:0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:30px;border-radius:22px}
+.track-form{display:flex;gap:10px}
+.track-form input{min-width:0;flex:1;background:white;border:1px solid transparent;border-radius:11px;padding:14px 16px;color:var(--ink)}
+.track-hint{font-size:.82rem;color:#c3d2e0;margin-top:14px}
+.track-result{display:none;margin-top:18px;padding:16px;background:white;color:var(--navy);border-radius:12px}
+.faq-list{max-width:850px;margin:0 auto;display:grid;gap:11px}
+.faq-item{border:1px solid var(--line);border-radius:13px;background:white;overflow:hidden}
+.faq-question{width:100%;border:0;background:white;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:center;font-weight:800;color:var(--navy)}
+.faq-question i{color:var(--blue);transition:transform .2s}
+.faq-answer{display:none;padding:0 20px 18px;color:var(--muted);font-size:.93rem}
+.faq-item.active .faq-answer{display:block}
+.faq-item.active .faq-question i{transform:rotate(180deg)}
+.contact-band{background:var(--sky);padding:45px 0}
+.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.contact-inner h2{font:800 clamp(1.5rem,3vw,2.2rem) Manrope,sans-serif;color:var(--navy);letter-spacing:-.04em}
+.contact-inner p{color:var(--muted);margin-top:5px}
+.footer{background:#0b1b2c;color:#d5e0eb;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.2fr;gap:38px;padding-bottom:38px}
+.footer h4{font:800 1rem Manrope,sans-serif;color:white;margin-bottom:16px}
+.footer p,.footer li,.footer a{font-size:.87rem;color:#aebdcb}
+.footer ul{list-style:none;display:grid;gap:10px}
+.footer a:hover{color:white}
+.footer-brand{margin-bottom:15px;color:white}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;display:flex;justify-content:space-between;gap:15px;color:#8ea0b2;font-size:.8rem}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.09);color:white}
+.float-wa{position:fixed;right:22px;bottom:22px;z-index:25;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#20bd69;color:white;font-size:1.65rem;box-shadow:0 10px 28px rgba(0,0,0,.2);transition:.2s}
+.float-wa:hover{transform:translateY(-3px)}
+.cookie{position:fixed;z-index:60;left:18px;right:18px;bottom:18px;max-width:850px;margin:auto;background:#10243b;color:white;padding:17px 19px;border-radius:15px;box-shadow:var(--shadow);display:none;align-items:center;justify-content:space-between;gap:18px}
+.cookie.show{display:flex}
+.cookie p{font-size:.86rem;color:#d4e0eb}
+.cookie-actions{display:flex;gap:8px;flex-shrink:0}
+.cookie-actions button{border:0;border-radius:8px;padding:9px 13px;font-size:.8rem;font-weight:800}
+.cookie-yes{background:var(--blue);color:white}.cookie-no{background:#34485c;color:white}
+.toast{position:fixed;z-index:80;top:92px;left:50%;transform:translateX(-50%);background:#10243b;color:white;border-radius:99px;padding:10px 17px;font-size:.84rem;box-shadow:var(--shadow);display:none;white-space:nowrap}
+.toast.show{display:block}
+.lang-notice{position:fixed;z-index:70;inset:0;background:rgba(5,19,34,.58);display:none;place-items:center;padding:20px}
+.lang-notice.show{display:grid}
+.notice-card{width:min(420px,100%);background:white;border-radius:20px;padding:28px;text-align:center;box-shadow:var(--shadow)}
+.notice-card .globe{font-size:2rem;color:var(--blue);margin-bottom:12px}
+.notice-card h3{font:800 1.3rem Manrope;color:var(--navy);margin-bottom:8px}
+.notice-card p{font-size:.92rem;color:var(--muted);margin-bottom:20px}
+.notice-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.notice-actions button{border:0;border-radius:10px;padding:11px 16px;font-weight:800}
+.notice-yes{background:var(--blue);color:white}.notice-no{background:#edf2f7;color:var(--navy)}
+.translating{opacity:1;pointer-events:auto}#translation-toast{display:none!important}
+@media(max-width:1000px){
+ .nav-links{gap:13px}.nav-links a{font-size:.82rem}.hero-grid{gap:35px}.footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:800px){
+ .section{padding:70px 0}.nav-links,.nav-actions>.nav-cta{display:none}.menu-toggle{display:block}
+ .hero{padding:78px 0 70px}.hero-grid{grid-template-columns:1fr}.hero-copy{max-width:720px}.hero-visual{max-width:500px;margin:15px auto 0}
+ .hero-photo{aspect-ratio:16/10}.photo-note{left:12px;bottom:15px}
+ .trust-grid{grid-template-columns:repeat(2,1fr);row-gap:20px}.trust-item{justify-content:flex-start}
+ .cards-3,.fleet-grid,.reviews-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-inner{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:560px){
+ .container{width:min(var(--container),calc(100% - 32px))}
+ .topline-inner{justify-content:center;text-align:center}.topline-inner span:nth-child(2){display:none}
+ .nav-inner{height:68px}.brand-mark{width:39px;height:39px}.brand-name{font-size:1.05rem}
+ .hero{padding:62px 0 58px}.hero h1{font-size:clamp(2.35rem,11vw,3.4rem)}.hero-copy>p{font-size:1rem}
+ .hero-buttons{display:grid;grid-template-columns:1fr}.hero-stats{gap:14px;justify-content:space-between}.stat strong{font-size:1.25rem}.stat span{font-size:.68rem}
+ .photo-note{position:relative;left:auto;bottom:auto;margin:-24px 12px 0;max-width:none}
+ .trust-grid{gap:17px 10px}.trust-item{gap:9px}.trust-icon{width:37px;height:37px}.trust-item strong{font-size:.78rem}.trust-item small{font-size:.68rem}
+ .cards-3,.fleet-grid,.reviews-grid{grid-template-columns:1fr}
+ .service-card{padding:24px}.fleet-card,.fleet-card img{min-height:245px}
+ .track-panel{padding:18px}.track-form{flex-direction:column}.track-form .btn{width:100%}
+ .footer-grid{grid-template-columns:1fr;gap:27px}.footer-bottom{flex-direction:column}
+ .cookie{left:10px;right:10px;bottom:10px;align-items:flex-start;flex-direction:column}
+ .cookie-actions{width:100%}.cookie-actions button{flex:1}
+ .section-head{margin-bottom:32px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
+
 <body>
-
-<!-- LANGUAGE MODAL -->
-<div id="lang-modal" class="lang-modal hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-  <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full text-center fade-in">
-    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-      <i class="fas fa-globe-americas text-blue-600 text-2xl"></i>
-    </div>
-    <h3 class="text-xl font-bold mb-2 text-gray-800" id="modal-title">Welcome!</h3>
-    <p class="mb-6 text-gray-500 text-sm leading-relaxed" id="modal-text">
-      We detected your language: <span id="detected-country" class="font-semibold text-blue-600"></span>. Switch to it?
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-3">
-      <button onclick="closeLangModal(true)" class="btn-primary text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-sm" id="modal-yes">Yes, switch</button>
-      <button onclick="closeLangModal(false)" class="bg-gray-100 text-gray-600 px-6 py-2.5 rounded-xl text-sm font-medium hover:bg-gray-200 transition" id="modal-no">Stay in English</button>
-    </div>
-  </div>
+<div class="topline">
+ <div class="container topline-inner">
+  <span><i class="fa-solid fa-globe-europe"></i> <span data-key="topline_text">Pet transport across Europe</span></span>
+  <span><i class="fa-regular fa-clock"></i> <span data-key="topline_support">Support and booking enquiries</span></span>
+  <a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +43 678 58226893</a>
+ </div>
 </div>
 
-<!-- COOKIE CONSENT -->
-<div id="cookie-consent" class="cookie-bar fixed bottom-0 left-0 right-0 bg-gray-900 text-white z-40 p-4 shadow-2xl">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-gray-300" data-key="cookie_text">We use cookies to enhance your experience.</p>
-    <div class="flex gap-3">
-      <button onclick="acceptCookies()" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition" data-key="cookie_accept">Accept</button>
-      <button onclick="declineCookies()" class="bg-gray-700 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition" data-key="cookie_decline">Decline</button>
+<header class="nav">
+ <div class="container nav-inner">
+  <a class="brand" href="#home" aria-label="Bianka Animalier home">
+   <span class="brand-mark"><i class="fa-solid fa-paw"></i></span>
+   <span class="brand-name">Bianka <span>Animalier</span></span>
+  </a>
+  <nav class="nav-links" aria-label="Main navigation">
+   <a href="#services" data-key="nav_services">Services</a><a href="#fleet" data-key="nav_fleet">Our Fleet</a>
+   <a href="#reviews" data-key="nav_reviews">Reviews</a><a href="#track" data-key="nav_track">Track Order</a><a href="#faq" data-key="nav_faq">FAQ</a>
+  </nav>
+  <div class="nav-actions">
+   <div class="lang-wrap">
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false"><i class="fa-solid fa-globe"></i> <span id="current-lang">EN</span> <i class="fa-solid fa-chevron-down"></i></button>
+    <div class="lang-menu" id="lang-menu">
+     <input class="lang-search" id="lang-search" type="search" placeholder="Search language..." aria-label="Search language">
+     <div id="language-list"></div>
     </div>
+   </div>
+   <a class="btn btn-primary nav-cta" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="nav_whatsapp">WhatsApp</span></a>
+   <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
-</div>
+ </div>
+ <nav class="mobile-links" id="mobile-links" aria-label="Mobile navigation">
+  <a href="#services" data-key="nav_services">Services</a><a href="#fleet" data-key="nav_fleet">Our Fleet</a>
+  <a href="#reviews" data-key="nav_reviews">Reviews</a><a href="#track" data-key="nav_track">Track Order</a><a href="#faq" data-key="nav_faq">FAQ</a>
+  <a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+ </nav>
+</header>
 
-<!-- NAV -->
-<nav class="glass-nav fixed top-0 left-0 right-0 z-40" id="navbar">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16 sm:h-20">
-      <div class="flex items-center gap-2.5 cursor-pointer" onclick="window.scrollTo(0,0)">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-md">
-          <i class="fas fa-paw text-white text-sm sm:text-base"></i>
-        </div>
-        <div><span class="text-lg sm:text-xl font-bold text-gray-800 tracking-tight">Bianka</span> <span class="text-lg sm:text-xl font-light text-blue-600 tracking-tight">Animalier</span></div>
-      </div>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-key="nav_services">Services</a>
-        <a href="#fleet" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-key="nav_fleet">Our Fleet</a>
-        <a href="#reviews" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-key="nav_reviews">Reviews</a>
-        <a href="#track" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-key="nav_track">Track Order</a>
-        <a href="#faq" class="text-sm font-medium text-gray-500 hover:text-blue-600 transition" data-key="nav_faq">FAQ</a>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="relative">
-          <button onclick="toggleLangDropdown()" class="flex items-center gap-1.5 text-gray-500 hover:text-blue-600 text-sm font-medium px-2 py-1">
-            <i class="fas fa-globe text-xs"></i><span id="current-lang">EN</span><i class="fas fa-chevron-down text-[10px]"></i>
-          </button>
-          <div id="lang-dropdown" class="lang-dropdown bg-white rounded-xl shadow-2xl py-2 border border-gray-100">
-            <div class="px-3 pb-2 border-b border-gray-100 sticky top-0 bg-white">
-              <input id="lang-search" type="text" placeholder="Search language..." class="w-full text-sm px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-blue-400">
-            </div>
-            <div id="language-list" class="flex flex-col pt-1"></div>
-          </div>
-        </div>
-        <a href="https://wa.me/4367858226893" target="_blank" rel="noopener" class="btn-primary text-white text-sm font-medium px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl shadow-sm flex items-center gap-2">
-          <i class="fab fa-whatsapp text-sm"></i><span data-key="nav_whatsapp">WhatsApp</span>
-        </a>
-        <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 text-xl"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <div class="hero-badge"><span class="live-dot"></span><span data-key="hero_badge">Trusted by 2,400+ families across Europe</span></div>
+   <h1><span data-key="hero_title_1">Safe, Stress-Free</span><br><span data-key="hero_title_2">Pet Transport</span></h1>
+   <p data-key="hero_subtitle">Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.</p>
+   <div class="hero-buttons">
+    <a class="btn btn-primary" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="hero_cta">Get a Free Quote</span></a>
+    <a class="btn btn-outline" href="#services"><span data-key="hero_cta2">Explore Our Services</span><i class="fa-solid fa-arrow-right"></i></a>
+   </div>
+   <div class="hero-stats">
+    <div class="stat"><strong>100%</strong><span data-key="stat_safe">Safe Delivery</span></div>
+    <div class="stat"><strong>2.4K+</strong><span data-key="stat_pets">Happy Pets</span></div>
+    <div class="stat"><strong>4.9 <span aria-hidden="true">★</span></strong><span data-key="stat_rating">Client Rating</span></div>
+   </div>
   </div>
-  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
-    <div class="px-4 py-4 space-y-3">
-      <a href="#services" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_services">Services</a>
-      <a href="#fleet" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_fleet">Our Fleet</a>
-      <a href="#reviews" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_reviews">Reviews</a>
-      <a href="#track" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_track">Track Order</a>
-      <a href="#faq" onclick="toggleMobileMenu()" class="block text-gray-600 hover:text-blue-600 font-medium" data-key="nav_faq">FAQ</a>
-      <a href="https://wa.me/4367858226893" target="_blank" class="block bg-green-500 text-white text-center py-2 rounded-full font-medium"><i class="fab fa-whatsapp mr-1"></i> <span data-key="nav_whatsapp">WhatsApp</span></a>
-    </div>
+  <div class="hero-visual">
+   <img class="hero-photo" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=88" alt="Two happy dogs outdoors" fetchpriority="high">
+   <div class="photo-note"><span class="note-icon"><i class="fa-solid fa-shield-heart"></i></span><span><strong data-key="hero_card_title">Care at every step</strong><small data-key="hero_card_sub">Updates throughout the journey</small></span></div>
   </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero-gradient pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="fade-in">
-        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
-          <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-          <span class="text-white/80 text-xs font-medium tracking-wide" data-key="hero_badge">Trusted by 2,400+ families across Europe</span>
-        </div>
-        <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 tracking-tight">
-          <span data-key="hero_title_1">Safe, Stress-Free</span><br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300" data-key="hero_title_2">Pet Transport</span>
-        </h1>
-        <p class="text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-lg" data-key="hero_subtitle">Professional door-to-door pet relocation across Europe.</p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="https://wa.me/4367858226893" target="_blank" rel="noopener" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-7 py-3.5 rounded-xl text-center shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base transition">
-            <i class="fab fa-whatsapp"></i><span data-key="hero_cta">Get a Free Quote</span>
-          </a>
-          <a href="#services" class="btn-outline text-white/90 font-medium px-7 py-3.5 rounded-xl text-center flex items-center justify-center gap-2 text-sm sm:text-base" data-key="hero_cta2">Our Services</a>
-        </div>
-        <div class="flex items-center gap-6 sm:gap-8 mt-10 pt-8 border-t border-white/10">
-          <div><div class="text-2xl sm:text-3xl font-bold stat-number">100%</div><div class="text-white/40 text-xs mt-1" data-key="stat_safe">Safe Delivery</div></div>
-          <div class="w-px h-10 bg-white/10"></div>
-          <div><div class="text-2xl sm:text-3xl font-bold stat-number">2.4K+</div><div class="text-white/40 text-xs mt-1" data-key="stat_pets">Happy Pets</div></div>
-          <div class="w-px h-10 bg-white/10"></div>
-          <div><div class="text-2xl sm:text-3xl font-bold stat-number">4.9<span class="text-lg">★</span></div><div class="text-white/40 text-xs mt-1" data-key="stat_rating">Client Rating</div></div>
-        </div>
-      </div>
-      <div class="hidden lg:flex justify-center items-center fade-in">
-        <div class="relative">
-          <div class="w-80 h-80 xl:w-96 xl:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Happy pets" class="w-full h-full object-cover">
-          </div>
-          <div class="absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl flex items-center gap-3">
-            <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center"><i class="fas fa-check-circle text-emerald-500"></i></div>
-            <div><div class="text-sm font-semibold text-gray-800" data-key="hero_card_title">GPS Tracked</div><div class="text-xs text-gray-400" data-key="hero_card_sub">Live updates 24/7</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ </div>
 </section>
 
-<!-- TRUST BAR -->
-<section class="bg-white py-6 border-b border-gray-100 relative z-10 -mt-1">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-certificate text-blue-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_1">Fully Licensed</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_1_sub">EU Pet Transport</div></div>
-      <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-shield-alt text-emerald-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_2">Fully Insured</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_2_sub">€2M Coverage</div></div>
-      <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-user-md text-purple-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_3">Vet Approved</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_3_sub">Certified Handlers</div></div>
-      <div class="trust-badge flex flex-col items-center text-center"><div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-2.5"><i class="fas fa-satellite-dish text-amber-600"></i></div><div class="text-xs font-semibold text-gray-800" data-key="trust_4">GPS Tracked</div><div class="text-[11px] text-gray-400 mt-0.5" data-key="trust_4_sub">Real-time Updates</div></div>
-    </div>
-  </div>
+<section class="trust-strip" aria-label="Service assurances">
+ <div class="container trust-grid">
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-certificate"></i></span><span><strong data-key="trust_1">Fully Licensed</strong><small data-key="trust_1_sub">EU Pet Transport</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-shield-halved"></i></span><span><strong data-key="trust_2">Fully Insured</strong><small data-key="trust_2_sub">€2M Coverage</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-user-doctor"></i></span><span><strong data-key="trust_3">Vet Approved</strong><small data-key="trust_3_sub">Certified Handlers</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-location-dot"></i></span><span><strong data-key="trust_4">GPS Tracked</strong><small data-key="trust_4_sub">Real-time Updates</small></span></div>
+ </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12 sm:mb-16">
-      <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase" data-key="services_label">What We Offer</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 tracking-tight" data-key="services_title">Professional Pet Transport Services</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base" data-key="services_subtitle">From short local trips to cross-border relocations.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
-      <div class="card-hover bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="service-icon w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-car-side text-blue-600 text-xl"></i></div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2" data-key="step1_title">1. Gentle Pickup</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-key="step1_desc">Our trained agents collect your pet with care.</p>
-      </div>
-      <div class="card-hover bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="service-icon w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-truck text-emerald-600 text-xl"></i></div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2" data-key="step2_title">2. Safe Transport</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-key="step2_desc">Climate-controlled vehicles with regular stops.</p>
-      </div>
-      <div class="card-hover bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-        <div class="service-icon w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-5"><i class="fas fa-home text-purple-600 text-xl"></i></div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2" data-key="step3_title">3. Happy Arrival</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-4" data-key="step3_desc">Door-to-door delivery, comfortable and happy.</p>
-      </div>
-    </div>
+<section class="section" id="services">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow" data-key="services_label">What We Offer</span><h2 data-key="services_title">Professional Pet Transport Services</h2><p data-key="services_subtitle">From short local trips to cross-border relocations, we make every journey more comfortable.</p></div>
+  <div class="cards-3">
+   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-car-side"></i></div><h3 data-key="step1_title">1. Gentle Pickup</h3><p data-key="step1_desc">Our trained agents collect your pet with care and attention.</p></article>
+   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div><h3 data-key="step2_title">2. Safe Transport</h3><p data-key="step2_desc">Climate-controlled vehicles and planned comfort stops help make the journey safer.</p></article>
+   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-house"></i></div><h3 data-key="step3_title">3. Happy Arrival</h3><p data-key="step3_desc">Door-to-door delivery, with care taken right through to arrival.</p></article>
   </div>
+ </div>
 </section>
 
-<!-- FLEET -->
-<section id="fleet" class="py-16 sm:py-24 bg-gray-50/70">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase" data-key="fleet_label">Our Vehicles</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 tracking-tight" data-key="fleet_title">Our Pet Delivery Fleet</h2>
-      <p class="text-gray-400 text-sm sm:text-base" data-key="fleet_subtitle">Specialized vehicles for safe transport.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="fleet-container"></div>
-  </div>
+<section class="section section-soft" id="fleet">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow" data-key="fleet_label">Our Vehicles</span><h2 data-key="fleet_title">A Fleet Designed for Pet Journeys</h2><p data-key="fleet_subtitle">Specialized transport, experienced handlers and practical travel equipment.</p></div>
+  <div class="fleet-grid" id="fleet-container"></div>
+ </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews" class="py-16 sm:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase" data-key="reviews_label">Testimonials</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 tracking-tight" data-key="reviews_title">What Our Customers Say</h2>
-      <p class="text-gray-400 text-sm sm:text-base" data-key="reviews_subtitle">Trusted by pet owners across Europe.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviews-container"></div>
-  </div>
+<section class="section" id="reviews">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow" data-key="reviews_label">Testimonials</span><h2 data-key="reviews_title">What Our Customers Say</h2><p data-key="reviews_subtitle">Experiences shared by pet owners across Europe.</p></div>
+  <div class="reviews-grid" id="reviews-container"></div>
+ </div>
 </section>
 
-<!-- TRACK -->
-<section id="track" class="py-16 sm:py-24 bg-gray-900 text-white">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight" data-key="track_title">Track Your Delivery</h2>
-      <p class="text-gray-400 text-sm sm:text-base" data-key="track_subtitle">Enter your Transport ID to see real-time status.</p>
-    </div>
-    <div class="bg-white/10 backdrop-blur-md p-2 rounded-full flex shadow-2xl border border-white/20 max-w-lg mx-auto">
-      <input type="text" id="tracking-input" placeholder="Transport ID (e.g. BA-12345)" class="bg-transparent border-none text-white placeholder-gray-400 px-6 py-3 w-full focus:outline-none font-mono">
-      <button onclick="trackOrder()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition" data-key="btn_track">Track</button>
-    </div>
-    <div id="tracking-result" class="hidden bg-white text-gray-800 rounded-2xl p-8 shadow-2xl mt-8 fade-in">
-      <div class="flex justify-between items-start mb-6 border-b pb-4">
-        <div><p class="text-sm text-gray-500 uppercase" data-key="track_status_label">Status</p><h3 class="text-2xl font-bold text-blue-600" id="track-status">In Transit</h3></div>
-        <div class="text-right"><p class="text-sm text-gray-500 uppercase" data-key="track_eta_label">Estimated Arrival</p><h3 class="text-xl font-bold text-gray-900" id="track-eta">2 Days</h3></div>
-      </div>
-      <div class="relative mb-8">
-        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200"><div id="progress-bar" style="width:60%" class="bg-blue-500 transition-all duration-1000"></div></div>
-        <div class="flex justify-between text-xs font-semibold text-gray-500 uppercase">
-          <span data-key="track_picked">Picked Up</span><span data-key="track_departed">Departed</span><span data-key="track_transit">Transit</span><span data-key="track_delivered">Delivered</span>
-        </div>
-      </div>
-      <div class="bg-gray-50 rounded-xl p-4 flex items-start gap-4">
-        <div class="bg-blue-100 p-3 rounded-full text-blue-600 mt-1"><i class="fas fa-map-marker-alt"></i></div>
-        <div><p class="font-bold text-gray-900" data-key="track_current">Current Location</p><p class="text-gray-600" id="track-location">Vienna, Austria</p></div>
-      </div>
-    </div>
+<section class="section track-section" id="track">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow" style="color:#9dccff" data-key="track_label">Journey Updates</span><h2 style="color:white" data-key="track_title">Track Your Delivery</h2><p style="color:#c4d2df" data-key="track_subtitle">Enter your Transport ID to request an update on your pet's journey.</p></div>
+  <div class="track-panel">
+   <form class="track-form" id="track-form">
+    <input id="tracking-input" type="text" placeholder="Transport ID (e.g. BA-12345)" autocomplete="off" required>
+    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span data-key="btn_track">Request Update</span></button>
+   </form>
+   <p class="track-hint" data-key="track_hint">Tracking updates are confirmed by our transport team. Submit your ID to contact us on WhatsApp.</p>
+   <div class="track-result" id="track-result" role="status" aria-live="polite"></div>
   </div>
+ </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="py-16 sm:py-24 bg-gray-50">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3 tracking-tight" data-key="faq_title">Frequently Asked Questions</h2>
-      <p class="text-gray-400 text-sm sm:text-base" data-key="faq_subtitle">Everything you need to know.</p>
-    </div>
-    <div class="space-y-3" id="faq-container"></div>
-  </div>
+<section class="section section-soft" id="faq">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow" data-key="faq_label">Need to Know</span><h2 data-key="faq_title">Frequently Asked Questions</h2><p data-key="faq_subtitle">Helpful answers before you arrange your pet's journey.</p></div>
+  <div class="faq-list" id="faq-container"></div>
+ </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-      <div>
-        <div class="flex items-center mb-4"><i class="fas fa-paw text-2xl text-blue-500 mr-2"></i><span class="font-bold text-xl">Bianka Animalier</span></div>
-        <p class="text-gray-400 text-sm leading-relaxed mb-6" data-key="footer_desc">Licensed across all EU states.</p>
-        <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg mb-6" data-key="footer_links">Quick Links</h4>
-        <ul class="space-y-3 text-gray-400">
-          <li><a href="#home" class="hover:text-white transition" data-key="nav_home">Home</a></li>
-          <li><a href="#services" class="hover:text-white transition" data-key="nav_services">Services</a></li>
-          <li><a href="#fleet" class="hover:text-white transition" data-key="nav_fleet">Our Fleet</a></li>
-          <li><a href="#reviews" class="hover:text-white transition" data-key="nav_reviews">Reviews</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg mb-6" data-key="footer_contact">Contact Us</h4>
-        <ul class="space-y-4 text-gray-400">
-          <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-500"></i><span data-key="footer_eu">Operating across all EU States</span></li>
-          <li class="flex items-center"><i class="fab fa-whatsapp mr-3 text-green-500"></i><a href="https://wa.me/4367858226893" target="_blank" class="hover:text-white transition">WhatsApp: +43 678 58226893</a></li>
-          <li class="flex items-center"><i class="fas fa-envelope mr-3 text-blue-500"></i><a href="mailto:Biankaanimalier@gmail.com" class="hover:text-white transition">Biankaanimalier@gmail.com</a></li>
-        </ul>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl">
-        <h4 class="font-bold text-lg mb-2" data-key="footer_urgent">Need Urgent Help?</h4>
-        <p class="text-gray-400 text-sm mb-4" data-key="footer_whatsapp">Chat on WhatsApp for instant replies.</p>
-        <a href="https://wa.me/4367858226893" target="_blank" class="block w-full bg-green-500 hover:bg-green-600 text-white text-center py-3 rounded-lg font-bold transition"><i class="fab fa-whatsapp mr-2"></i> <span data-key="btn_chat">Start Chat</span></a>
-      </div>
-    </div>
-    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-gray-500 text-sm">© Bianka Animalier. All rights reserved.</p>
-      <div class="flex space-x-6 text-sm text-gray-500 mt-4 md:mt-0">
-        <a href="#" class="hover:text-white" data-key="footer_privacy">Privacy Policy</a>
-        <a href="#" class="hover:text-white" data-key="footer_terms">Terms of Service</a>
-      </div>
-    </div>
+<section class="contact-band">
+ <div class="container contact-inner">
+  <div><h2 data-key="contact_title">Planning a journey for your pet?</h2><p data-key="contact_subtitle">Contact our team to discuss routes, documents and arrangements.</p></div>
+  <a class="btn btn-primary" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="contact_cta">Talk to Our Team</span></a>
+ </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="brand footer-brand"><span class="brand-mark"><i class="fa-solid fa-paw"></i></span><span class="brand-name" style="color:white">Bianka <span>Animalier</span></span></div><p data-key="footer_desc">Professional pet transport and relocation services across Europe.</p><div class="socials"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div></div>
+   <div><h4 data-key="footer_links">Quick Links</h4><ul><li><a href="#home" data-key="nav_home">Home</a></li><li><a href="#services" data-key="nav_services">Services</a></li><li><a href="#fleet" data-key="nav_fleet">Our Fleet</a></li><li><a href="#reviews" data-key="nav_reviews">Reviews</a></li></ul></div>
+   <div><h4 data-key="footer_contact">Contact Us</h4><ul><li><i class="fa-solid fa-location-dot"></i> <span data-key="footer_eu">Operating across EU states</span></li><li><a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +43 678 58226893</a></li><li><a href="mailto:Biankaanimalier@gmail.com"><i class="fa-regular fa-envelope"></i> Biankaanimalier@gmail.com</a></li></ul></div>
+   <div><h4 data-key="footer_urgent">Need Assistance?</h4><p data-key="footer_whatsapp">Contact us on WhatsApp for booking enquiries and journey updates.</p><a class="btn btn-primary" style="margin-top:15px" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="btn_chat">Start a Chat</span></a></div>
   </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Bianka Animalier. <span data-key="footer_rights">All rights reserved.</span></span><span><a href="#" data-key="footer_privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" data-key="footer_terms">Terms of Service</a></span></div>
+ </div>
 </footer>
 
-<a href="https://wa.me/4367858226893" target="_blank" class="whatsapp-float w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl hover:bg-green-600 transition"><i class="fab fa-whatsapp"></i></a>
+<a class="float-wa" href="https://wa.me/4367858226893" target="_blank" rel="noopener" aria-label="Contact Bianka Animalier on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<div class="toast" id="translation-toast"><i class="fa-solid fa-circle-notch fa-spin"></i> <span data-key="translating">Translating page…</span></div>
+<div class="cookie" id="cookie-banner"><p data-key="cookie_text">We use cookies to remember your language and improve your browsing experience.</p><div class="cookie-actions"><button class="cookie-yes" id="cookie-yes" data-key="cookie_accept">Accept</button><button class="cookie-no" id="cookie-no" data-key="cookie_decline">Decline</button></div></div>
 
 <script>
+"use strict";
+
+/* English source strings. These keys drive both the static page and language switching. */
 const EN = {
-  modal_title:"Welcome!",
-  modal_detected_prefix:"We detected your language:",
-  modal_detected_suffix:"Switch to it?",
-  modal_yes:"Yes, switch",
-  modal_no:"Stay in English",
-  cookie_text:"We use cookies to enhance your experience.",
-  cookie_accept:"Accept", cookie_decline:"Decline",
-  nav_home:"Home", nav_services:"Services", nav_fleet:"Our Fleet", nav_reviews:"Reviews",
-  nav_track:"Track Order", nav_faq:"FAQ", nav_whatsapp:"WhatsApp",
-  hero_badge:"Trusted by 2,400+ families across Europe",
-  hero_title_1:"Safe, Stress-Free", hero_title_2:"Pet Transport",
-  hero_subtitle:"Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.",
-  hero_cta:"Get a Free Quote", hero_cta2:"Our Services",
-  hero_card_title:"GPS Tracked", hero_card_sub:"Live updates 24/7",
-  stat_safe:"Safe Delivery", stat_pets:"Happy Pets", stat_rating:"Client Rating",
-  trust_1:"Fully Licensed", trust_1_sub:"EU Pet Transport",
-  trust_2:"Fully Insured", trust_2_sub:"€2M Coverage",
-  trust_3:"Vet Approved", trust_3_sub:"Certified Handlers",
-  trust_4:"GPS Tracked", trust_4_sub:"Real-time Updates",
-  services_label:"What We Offer",
-  services_title:"Professional Pet Transport Services",
-  services_subtitle:"From short local trips to cross-border relocations.",
-  step1_title:"1. Gentle Pickup", step1_desc:"Our trained agents collect your pet with care.",
-  step2_title:"2. Safe Transport", step2_desc:"Climate-controlled vehicles with regular stops.",
-  step3_title:"3. Happy Arrival", step3_desc:"Door-to-door delivery, comfortable and happy.",
-  fleet_label:"Our Vehicles", fleet_title:"Our Pet Delivery Fleet",
-  fleet_subtitle:"Specialized vehicles for safe transport.",
-  fleet_van:"Pet Delivery Van", fleet_van_desc:"Climate controlled & GPS tracked",
-  fleet_agent:"Professional Agents", fleet_agent_desc:"Trained pet handlers",
-  fleet_carrier:"Secure Carriers", fleet_carrier_desc:"IATA approved crates",
-  fleet_truck:"Long Distance Trucks", fleet_truck_desc:"For cross-country moves",
-  fleet_door:"Door-to-Door Service", fleet_door_desc:"We bring pets to your home",
-  fleet_happy:"Happy Arrivals", fleet_happy_desc:"Safe and stress-free",
-  reviews_label:"Testimonials", reviews_title:"What Our Customers Say",
-  reviews_subtitle:"Trusted by pet owners across Europe.",
-  track_title:"Track Your Delivery",
-  track_subtitle:"Enter your Transport ID to see real-time status.",
-  track_status_label:"Status", track_eta_label:"Estimated Arrival",
-  track_picked:"Picked Up", track_departed:"Departed",
-  track_transit:"Transit", track_delivered:"Delivered",
-  track_current:"Current Location", btn_track:"Track",
-  faq_title:"Frequently Asked Questions", faq_subtitle:"Everything you need to know.",
-  footer_desc:"Licensed across all EU states.",
-  footer_links:"Quick Links", footer_contact:"Contact Us",
-  footer_eu:"Operating across all EU States",
-  footer_urgent:"Need Urgent Help?",
-  footer_whatsapp:"Chat on WhatsApp for instant replies.",
-  footer_privacy:"Privacy Policy", footer_terms:"Terms of Service",
-  btn_chat:"Start Chat"
+ topline_text:"Pet transport across Europe",topline_support:"Support and booking enquiries",
+ nav_home:"Home",nav_services:"Services",nav_fleet:"Our Fleet",nav_reviews:"Reviews",nav_track:"Track Order",nav_faq:"FAQ",nav_whatsapp:"WhatsApp",
+ hero_badge:"Trusted by 2,400+ families across Europe",hero_title_1:"Safe, Stress-Free",hero_title_2:"Pet Transport",
+ hero_subtitle:"Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.",
+ hero_cta:"Get a Free Quote",hero_cta2:"Explore Our Services",hero_card_title:"Care at every step",hero_card_sub:"Updates throughout the journey",
+ stat_safe:"Safe Delivery",stat_pets:"Happy Pets",stat_rating:"Client Rating",
+ trust_1:"Fully Licensed",trust_1_sub:"EU Pet Transport",trust_2:"Fully Insured",trust_2_sub:"€2M Coverage",trust_3:"Vet Approved",trust_3_sub:"Certified Handlers",trust_4:"GPS Tracked",trust_4_sub:"Real-time Updates",
+ services_label:"What We Offer",services_title:"Professional Pet Transport Services",services_subtitle:"From short local trips to cross-border relocations, we make every journey more comfortable.",
+ step1_title:"1. Gentle Pickup",step1_desc:"Our trained agents collect your pet with care and attention.",step2_title:"2. Safe Transport",step2_desc:"Climate-controlled vehicles and planned comfort stops help make the journey safer.",step3_title:"3. Happy Arrival",step3_desc:"Door-to-door delivery, with care taken right through to arrival.",
+ fleet_label:"Our Vehicles",fleet_title:"A Fleet Designed for Pet Journeys",fleet_subtitle:"Specialized transport, experienced handlers and practical travel equipment.",
+ fleet_van:"Pet Delivery Van",fleet_van_desc:"Climate-controlled and GPS-tracked transport vehicles.",
+ fleet_agent:"Professional Pet Handlers",fleet_agent_desc:"Experienced handlers who care for pets during the journey.",
+ fleet_carrier:"Secure Pet Carriers",fleet_carrier_desc:"Secure travel crates and suitable pet equipment.",
+ fleet_truck:"Long-Distance Transport",fleet_truck_desc:"Transport solutions for journeys across countries.",
+ fleet_door:"Door-to-Door Service",fleet_door_desc:"Collection and delivery arranged around your route.",
+ fleet_happy:"Comfortable Arrivals",fleet_happy_desc:"Care and attention from collection to arrival.",
+ fleet_rabbit:"Rabbit Transport",fleet_rabbit_desc:"Small pets prepared in secure, suitable carriers.",fleet_bird:"Bird Transport",fleet_bird_desc:"Careful handling and suitable travel arrangements for birds.",fleet_horse:"Horse Transport",fleet_horse_desc:"Purpose-built vehicles and loading equipment for horses.",fleet_smallpets:"Small Animal Transport",fleet_smallpets_desc:"Individual enclosures for smaller companion animals.",fleet_mixedpets:"Dogs and Cats",fleet_mixedpets_desc:"Different companion animals travelling with trained handlers.",fleet_travel:"Secure Travel Spaces",fleet_travel_desc:"Separate, secure spaces for pets travelling by road.",
+ reviews_label:"Testimonials",reviews_title:"What Our Customers Say",reviews_subtitle:"Experiences shared by pet owners across Europe.",
+ track_label:"Journey Updates",track_title:"Track Your Delivery",track_subtitle:"Enter your Transport ID to request an update on your pet's journey.",
+ btn_track:"Request Update",track_hint:"Tracking updates are confirmed by our transport team. Submit your ID to contact us on WhatsApp.",
+ faq_label:"Need to Know",faq_title:"Frequently Asked Questions",faq_subtitle:"Helpful answers before you arrange your pet's journey.",
+ contact_title:"Planning a journey for your pet?",contact_subtitle:"Contact our team to discuss routes, documents and arrangements.",contact_cta:"Talk to Our Team",
+ footer_desc:"Professional pet transport and relocation services across Europe.",footer_links:"Quick Links",footer_contact:"Contact Us",footer_eu:"Operating across EU states",footer_urgent:"Need Assistance?",footer_whatsapp:"Contact us on WhatsApp for booking enquiries and journey updates.",btn_chat:"Start a Chat",footer_rights:"All rights reserved.",footer_privacy:"Privacy Policy",footer_terms:"Terms of Service",
+ cookie_text:"We use cookies to remember your language and improve your browsing experience.",cookie_accept:"Accept",cookie_decline:"Decline",
+ translating:"Translating page automatically…"
 };
 
-const EN_REVIEWS = [
-  {name:"Maria G.", location:"Madrid, Spain", text:"Bianka Animalier delivered my Golden Retriever puppy from Germany to Spain in perfect condition. The driver sent photos every few hours!"},
-  {name:"Thomas B.", location:"Vienna, Austria", text:"I was nervous about shipping my cat across Europe, but the team was incredibly professional. The tracking feature gave me peace of mind."},
-  {name:"Sophie L.", location:"Rome, Italy", text:"Our two French Bulldogs arrived safely from Paris to Rome. The drivers clearly love animals and played with them during rest stops!"},
-  {name:"Jan D.", location:"Amsterdam, Netherlands", text:"Fast, reliable, and caring. My parrot arrived in Amsterdam from Lisbon with all documentation handled perfectly."},
-  {name:"Anna K.", location:"Berlin, Germany", text:"The WhatsApp updates were fantastic! I knew exactly where my puppy was at all times. From Warsaw to Berlin in just 2 days."},
-  {name:"Lars N.", location:"Copenhagen, Denmark", text:"Professional service from start to finish. They handled all the EU pet passport paperwork and delivered my dog safely."}
+const REVIEWS = [
+ {name:"Maria G.",location:"Madrid, Spain",text:"Bianka Animalier delivered my Golden Retriever puppy from Germany to Spain in perfect condition. The driver sent photos every few hours!"},
+ {name:"Thomas B.",location:"Vienna, Austria",text:"I was nervous about transporting my cat across Europe, but the team was incredibly professional. The updates gave me peace of mind."},
+ {name:"Sophie L.",location:"Rome, Italy",text:"Our two French Bulldogs arrived safely from Paris to Rome. The drivers clearly love animals and cared for them during rest stops!"},
+ {name:"Jan D.",location:"Amsterdam, Netherlands",text:"Fast, reliable, and caring. My parrot arrived in Amsterdam from Lisbon with all documentation handled perfectly."},
+ {name:"Anna K.",location:"Berlin, Germany",text:"The WhatsApp updates were fantastic! I knew where my puppy was during the journey. From Warsaw to Berlin in just 2 days."},
+ {name:"Lars N.",location:"Copenhagen, Denmark",text:"Professional service from start to finish. They handled the EU pet passport paperwork and delivered my dog safely."}
+];
+const FAQ = [
+ {q:"Is pet transport safe?",a:"We use specialized vehicles and take care to make journeys as comfortable as possible. Ask our team about the arrangements for your route and pet."},
+ {q:"Do you handle paperwork?",a:"We can advise on the documentation needed for your journey, including pet passports and health certificates. Requirements depend on the countries involved."},
+ {q:"How long does transport take?",a:"Delivery times depend on the route, distance, schedule and documentation. Contact us for an estimate for your journey."},
+ {q:"Do you sell pets?",a:"No. Bianka Animalier provides pet transport and logistics services."},
+ {q:"Can I receive updates during the journey?",a:"Contact our team to arrange journey updates and find out which tracking options are available for your booking."},
+ {q:"What areas do you cover?",a:"The service operates across EU states, with additional routes subject to confirmation. Contact us with your collection and delivery locations."},
+ {q:"How do I book?",a:"Contact us on WhatsApp at +43 678 58226893 or email Biankaanimalier@gmail.com with your route and pet details."},
+ {q:"Do you offer insurance?",a:"The company states that transports are insured. Contact the team for the applicable coverage terms for your booking."}
+];
+const FLEET = [
+ {img:"https://static.wixstatic.com/media/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg/v1/fill/w_419%2Ch_314%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg",title:"fleet_van",desc:"fleet_van_desc",alt:"Dogs travelling with a pet transport handler"},
+ {img:"https://static.wixstatic.com/media/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg/v1/fill/w_391%2Ch_294%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg",title:"fleet_agent",desc:"fleet_agent_desc",alt:"Dachshund puppy resting in a travel bed during a road journey"},
+ {img:"https://static.wixstatic.com/media/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg/v1/fill/w_198%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg",title:"fleet_carrier",desc:"fleet_carrier_desc",alt:"Tabby cat resting in a pet carrier"},
+ {img:"https://static.wixstatic.com/media/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg/v1/fill/w_324%2Ch_324%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg",title:"fleet_truck",desc:"fleet_truck_desc",alt:"Two small dogs secured for a car journey"},
+ {img:"https://static.wixstatic.com/media/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg/v1/fill/w_197%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg",title:"fleet_door",desc:"fleet_door_desc",alt:"Pet transport van with a ramp and secure travel crates"},
+ {img:"https://static.wixstatic.com/media/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg/v1/fill/w_197%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg",title:"fleet_happy",desc:"fleet_happy_desc",alt:"Rottweiler with a pet transport handler beside a van"},
+ {img:"https://ruedinger.eu/images_ruedinger/tiertransport_1920x1000.jpg",title:"fleet_rabbit",desc:"fleet_rabbit_desc",alt:"Rabbit being prepared for transport in a secure carrier"},
+ {img:"https://i.insider.com/6365213bff27460018ed9b39?auto=webp&format=jpeg&width=800",title:"fleet_bird",desc:"fleet_bird_desc",alt:"Blue and yellow macaw in a secure animal travel crate at an airport"},
+ {img:"https://www.deutscher-galopp.de/gr-wAssets/img/meldungen/20230918-sachkundenachweis-pferdetransport/galerie/ein-pferd-beim-aufladen-in-den-transporter-galoppfoto.de.jpg",title:"fleet_horse",desc:"fleet_horse_desc",alt:"Horse being led up a ramp into a horse transport vehicle"},
+ {img:"https://images.squarespace-cdn.com/content/v1/66f7648d02708a31b41bc6bc/1773752557376-NF5STQEQCT30EQYOXNX7/image-asset.jpeg",title:"fleet_smallpets",desc:"fleet_smallpets_desc",alt:"Specialized animal transport van with individual small-animal enclosures"},
+ {img:"https://www.fastlaneshipments.com/services/pet-care-1.jpg",title:"fleet_mixedpets",desc:"fleet_mixedpets_desc",alt:"Dogs and cats with a transport handler beside a specialist animal transport vehicle"},
+ {img:"https://www.vettaksi.com/images/new-car-backs.png",title:"fleet_travel",desc:"fleet_travel_desc",alt:"Dog and cat in separate secure compartments inside a transport van"}
+];
+const REVIEW_PHOTOS=[
+ "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
+ "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
+ "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80",
+ "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
+ "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
+ "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
 ];
 
-const EN_FAQ = [
-  {q:"Is pet transport safe?", a:"Absolutely. We use specialized climate-controlled vehicles and partner with licensed veterinary professionals."},
-  {q:"Do you handle paperwork?", a:"Yes, we handle all necessary documentation including EU Pet Passports, health certificates, and customs clearance."},
-  {q:"How long does transport take?", a:"Delivery times vary. Typically 2-5 business days within the EU with real-time tracking."},
-  {q:"Do you sell pets?", a:"No, Bianka Animalier is strictly a logistics and transport company."},
-  {q:"Can I track my pet?", a:"Yes! We provide GPS tracking and regular photo updates via WhatsApp."},
-  {q:"What areas do you cover?", a:"All 27 EU member states, plus Switzerland, Norway, and the UK."},
-  {q:"How do I book?", a:"Contact us via WhatsApp at +43 678 58226893 or email Biankaanimalier@gmail.com."},
-  {q:"Do you offer insurance?", a:"Yes, all transports are fully insured."}
-];
-
-const reviewImages = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
-];
-
-const fleetImages = [
-  { img:"https://kimi-web-img.moonshot.cn/img/img.kwcdn.com/5934cfc6e700c26f13a0e81f0284f509b66dfd4f.png", fallback:"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_van", descKey:"fleet_van_desc" },
-  { img:"https://kimi-web-img.moonshot.cn/img/airpets.com/d371c13b6b501e99095a466b9055547911a06b8d.jpg", fallback:"https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_agent", descKey:"fleet_agent_desc" },
-  { img:"https://kimi-web-img.moonshot.cn/img/wp.vquip.com.au/25cd01a26c9e181062c1830746b40831a39891ac.jpg", fallback:"https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_carrier", descKey:"fleet_carrier_desc" },
-  { img:"https://kimi-web-img.moonshot.cn/img/www.adeopets.com/4731eeb6a0f683b0ec4ff7d93c7c3138123821f3.jpg", fallback:"https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_truck", descKey:"fleet_truck_desc" },
-  { img:"https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/d86e83c6259ea4230bd89233cb46d53bc04da2a0.jpg", fallback:"https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_door", descKey:"fleet_door_desc" },
-  { img:"https://kimi-web-img.moonshot.cn/img/tgs-group.com/83928ff9dfd809a38f2f5e0f9f63b4279d6bd743.jpg", fallback:"https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_happy", descKey:"fleet_happy_desc" }
-];
-
-const LANG_MAP = {
-  af:"Afrikaans", sq:"Shqip", am:"አማርኛ", ar:"العربية", hy:"Հայերեն", az:"Azərbaycan",
-  eu:"Euskara", be:"Беларуская", bn:"বাংলা", bs:"Bosanski", bg:"Български", ca:"Català",
-  ceb:"Cebuano", ny:"Chichewa", zh:"中文", co:"Corsu", hr:"Hrvatski", cs:"Čeština",
-  da:"Dansk", nl:"Nederlands", en:"English", eo:"Esperanto", et:"Eesti", tl:"Filipino",
-  fi:"Suomi", fr:"Français", fy:"Frysk", gl:"Galego", ka:"ქართული", de:"Deutsch",
-  el:"Ελληνικά", gu:"ગુજરાતી", ht:"Kreyòl ayisyen", ha:"Hausa", haw:"ʻŌlelo Hawaiʻi",
-  he:"עברית", hi:"हिन्दी", hmn:"Hmoob", hu:"Magyar", is:"Íslenska", ig:"Igbo",
-  id:"Indonesia", ga:"Gaeilge", it:"Italiano", ja:"日本語", jw:"Jawa", kn:"ಕನ್ನಡ",
-  kk:"Қазақ", km:"ខ្មែរ", rw:"Kinyarwanda", ko:"한국어", ku:"Kurdî", ky:"Кыргызча",
-  lo:"ລາວ", la:"Latina", lv:"Latviešu", lt:"Lietuvių", lb:"Lëtzebuergesch",
-  mk:"Македонски", mg:"Malagasy", ms:"Bahasa Melayu", ml:"മലയാളം", mt:"Malti",
-  mi:"Māori", mr:"मराठी", mn:"Монгол", my:"မြန်မာ", ne:"नेपाली", no:"Norsk",
-  or:"ଓଡ଼ିଆ", ps:"پښتو", fa:"فارسی", pl:"Polski", pt:"Português", pa:"ਪੰਜਾਬੀ",
-  ro:"Română", ru:"Русский", sm:"Gagana Samoa", gd:"Gàidhlig", sr:"Српски",
-  st:"Sesotho", sn:"Shona", sd:"سنڌي", si:"සිංහල", sk:"Slovenčina", sl:"Slovenščina",
-  so:"Soomaali", es:"Español", su:"Basa Sunda", sw:"Kiswahili", sv:"Svenska",
-  tg:"Тоҷикӣ", ta:"தமிழ்", tt:"Татарча", te:"తెలుగు", th:"ไทย", tr:"Türkçe",
-  tk:"Türkmen", uk:"Українська", ur:"اردو", ug:"ئۇيغۇرچە", uz:"Oʻzbek",
-  vi:"Tiếng Việt", cy:"Cymraeg", xh:"isiXhosa", yi:"יידיש", yo:"Yorùbá", zu:"Zulu"
+const LANGUAGES={
+ af:"Afrikaans",sq:"Albanian",am:"Amharic",ar:"Arabic",hy:"Armenian",az:"Azerbaijani",eu:"Basque",be:"Belarusian",bn:"Bengali",bs:"Bosnian",bg:"Bulgarian",ca:"Catalan",ceb:"Cebuano",zh:"Chinese",hr:"Croatian",cs:"Czech",da:"Danish",nl:"Dutch",en:"English",et:"Estonian",tl:"Filipino",fi:"Finnish",fr:"French",gl:"Galician",ka:"Georgian",de:"German",el:"Greek",gu:"Gujarati",ht:"Haitian Creole",ha:"Hausa",he:"Hebrew",hi:"Hindi",hu:"Hungarian",is:"Icelandic",ig:"Igbo",id:"Indonesian",ga:"Irish",it:"Italian",ja:"Japanese",jv:"Javanese",kn:"Kannada",kk:"Kazakh",km:"Khmer",ko:"Korean",ku:"Kurdish",ky:"Kyrgyz",lo:"Lao",lv:"Latvian",lt:"Lithuanian",lb:"Luxembourgish",mk:"Macedonian",ms:"Malay",ml:"Malayalam",mt:"Maltese",mr:"Marathi",mn:"Mongolian",my:"Myanmar",ne:"Nepali",no:"Norwegian",fa:"Persian",pl:"Polish",pt:"Portuguese",pa:"Punjabi",ro:"Romanian",ru:"Russian",sr:"Serbian",sk:"Slovak",sl:"Slovenian",es:"Spanish",sw:"Swahili",sv:"Swedish",ta:"Tamil",te:"Telugu",th:"Thai",tr:"Turkish",uk:"Ukrainian",ur:"Urdu",uz:"Uzbek",vi:"Vietnamese",cy:"Welsh",yo:"Yoruba",zu:"Zulu"
 };
 
-let currentLang = 'en';
-let translatedStrings = { ...EN };
-let translatedReviews = EN_REVIEWS;
-let translatedFAQ = EN_FAQ;
+let activeLanguage="en";
+let translationRun=0;
+const cachePrefix="ba_translation_v3_";
+const getCache=(lang)=>{try{return JSON.parse(localStorage.getItem(cachePrefix+lang)||"null")}catch{return null}};
+const saveCache=(lang,data)=>{try{localStorage.setItem(cachePrefix+lang,JSON.stringify(data))}catch(e){console.info("Translation cache unavailable",e)}};
 
-const translationCache = { en: { strings: { ...EN }, reviews: EN_REVIEWS, faq: EN_FAQ } };
-
-async function translateText(text, targetLang){
-  if (!text || targetLang === 'en') return text;
-  if (text.length > 480) text = text.slice(0, 480);
-  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`;
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    if (data && data.responseData && data.responseData.translatedText) {
-      return decodeEntities(data.responseData.translatedText);
-    }
-    return text;
-  } catch (e) {
-    console.warn('Translate failed for:', text, e);
-    return text;
-  }
-}
-
-function decodeEntities(str){
-  const txt = document.createElement('textarea');
-  txt.innerHTML = str;
-  return txt.value;
-}
-
-async function translateArray(items, targetLang){
-  const out = [];
-  for (let i = 0; i < items.length; i++){
-    const t = await translateText(items[i], targetLang);
-    out.push(t);
-    await new Promise(r => setTimeout(r, 120));
-  }
-  return out;
-}
-
-async function translateReviews(reviews, targetLang){
-  const flat = [];
-  reviews.forEach(r => { flat.push(r.name, r.location, r.text); });
-  const out = await translateArray(flat, targetLang);
-  const result = [];
-  for (let i = 0; i < reviews.length; i++){
-    result.push({
-      name: out[i*3],
-      location: out[i*3 + 1],
-      text: out[i*3 + 2]
-    });
-  }
-  return result;
-}
-
-async function translateFAQ(faqs, targetLang){
-  const flat = [];
-  faqs.forEach(f => { flat.push(f.q, f.a); });
-  const out = await translateArray(flat, targetLang);
-  const result = [];
-  for (let i = 0; i < faqs.length; i++){
-    result.push({ q: out[i*2], a: out[i*2 + 1] });
-  }
-  return result;
-}
-
-async function setLanguage(lang){
-  if (!lang) lang = 'en';
-  const isEn = (lang === 'en');
-
-  document.documentElement.lang = lang;
-  localStorage.setItem('preferredLang', lang);
-  document.getElementById('current-lang').innerText = lang.toUpperCase();
-
-  if (isEn){
-    translatedStrings = { ...EN };
-    translatedReviews = EN_REVIEWS;
-    translatedFAQ = EN_FAQ;
-    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
-    return;
-  }
-
-  if (translationCache[lang]){
-    translatedStrings = translationCache[lang].strings;
-    translatedReviews = translationCache[lang].reviews;
-    translatedFAQ = translationCache[lang].faq;
-    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
-    return;
-  }
-
-  document.body.classList.add('translating');
-  showLoadingToast(true);
-
-  try {
-    const keys = Object.keys(EN);
-    const stringValues = keys.map(k => EN[k]);
-    const tStrings = await translateArray(stringValues, lang);
-    const tReviews = await translateReviews(EN_REVIEWS, lang);
-    const tFAQ = await translateFAQ(EN_FAQ, lang);
-
-    const strings = {};
-    keys.forEach((k, i) => { strings[k] = tStrings[i]; });
-
-    translationCache[lang] = { strings, reviews: tReviews, faq: tFAQ };
-    translatedStrings = strings;
-    translatedReviews = tReviews;
-    translatedFAQ = tFAQ;
-
-    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
-  } catch(e){
-    console.error(e);
-    translatedStrings = { ...EN };
-    translatedReviews = EN_REVIEWS;
-    translatedFAQ = EN_FAQ;
-    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
-  } finally {
-    document.body.classList.remove('translating');
-    showLoadingToast(false);
-  }
-}
-
-function showLoadingToast(show){
-  let t = document.getElementById('loading-toast');
-  if (!t){
-    t = document.createElement('div');
-    t.id = 'loading-toast';
-    t.className = 'fixed top-24 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-5 py-2.5 rounded-full shadow-lg z-[80] transition-opacity';
-    t.style.display = 'none';
-    t.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Translating...';
-    document.body.appendChild(t);
-  }
-  t.style.display = show ? 'block' : 'none';
-}
-
-function applyStrings(){
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const k = el.getAttribute('data-key');
-    if (translatedStrings[k] && typeof translatedStrings[k] === 'string'){
-      el.innerHTML = translatedStrings[k];
-    }
-  });
-
-  document.getElementById('modal-title').innerText = translatedStrings.modal_title;
-  document.getElementById('modal-yes').innerText = translatedStrings.modal_yes;
-  document.getElementById('modal-no').innerText = translatedStrings.modal_no;
-
-  const detected = document.getElementById('detected-country').innerText;
-  document.getElementById('modal-text').innerHTML =
-    `${translatedStrings.modal_detected_prefix} <span class="font-semibold text-blue-600">${detected}</span> ${translatedStrings.modal_detected_suffix || ''}`;
-
-  const trackInput = document.getElementById('tracking-input');
-  if (trackInput) trackInput.setAttribute('placeholder', translatedStrings.track_placeholder || 'Transport ID');
-}
-
+function safeText(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function renderFleet(){
-  const t = translatedStrings;
-  document.getElementById('fleet-container').innerHTML = fleetImages.map(f => `
-    <div class="group relative overflow-hidden rounded-2xl shadow-lg h-80 card-hover">
-      <img src="${f.img}" alt="" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='${f.fallback}'">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-        <div class="text-white"><h3 class="font-bold text-xl">${t[f.titleKey]||f.titleKey}</h3><p class="text-sm text-gray-300">${t[f.descKey]||f.descKey}</p></div>
-      </div>
-    </div>
-  `).join('');
+ const s=getStrings();
+ document.getElementById("fleet-container").innerHTML=FLEET.map(f=>`<article class="fleet-card"><img src="${f.img}" alt="${safeText(f.alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.fleet-card').classList.add('image-unavailable')"><div class="fleet-caption"><h3>${safeText(s[f.title])}</h3><p>${safeText(s[f.desc])}</p></div></article>`).join("");
 }
-
 function renderReviews(){
-  document.getElementById('reviews-container').innerHTML = translatedReviews.map((r, i) => `
-    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
-      <div class="flex items-center gap-1 mb-4">${'<i class="fas fa-star star-rating"></i>'.repeat(5)}</div>
-      <p class="text-gray-600 mb-6 italic">"${r.text}"</p>
-      <div class="flex items-center gap-4">
-        <img src="${reviewImages[i]}" alt="${r.name}" class="w-12 h-12 rounded-full object-cover">
-        <div><p class="font-bold text-gray-900">${r.name}</p><p class="text-sm text-gray-500">${r.location}</p></div>
-      </div>
-    </div>
-  `).join('');
+ const data=window.currentReviews||REVIEWS;
+ document.getElementById("reviews-container").innerHTML=data.map((r,i)=>`<article class="review-card"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“${safeText(r.text)}”</blockquote><div class="reviewer"><img src="${REVIEW_PHOTOS[i]}" alt="" loading="lazy"><span><strong>${safeText(r.name)}</strong><small>${safeText(r.location)}</small></span></div></article>`).join("");
 }
-
 function renderFAQs(){
-  document.getElementById('faq-container').innerHTML = translatedFAQ.map((f, i) => `
-    <div class="border border-gray-200 rounded-lg bg-white overflow-hidden">
-      <button class="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition" onclick="toggleFaq(${i})">
-        <span class="font-semibold text-gray-800 pr-4">${f.q}</span>
-        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="fi-${i}"></i>
-      </button>
-      <div id="fa-${i}" class="hidden px-6 pb-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 bg-gray-50">${f.a}</div>
-    </div>
-  `).join('');
+ const data=window.currentFAQ||FAQ;
+ document.getElementById("faq-container").innerHTML=data.map((f,i)=>`<article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-${i}"><span>${safeText(f.q)}</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer" id="faq-answer-${i}">${safeText(f.a)}</div></article>`).join("");
+}
+function getStrings(){return window.currentStrings||EN}
+function applyStrings(){
+ document.querySelectorAll("[data-key]").forEach(el=>{
+  const key=el.getAttribute("data-key"),value=getStrings()[key];
+  if(typeof value==="string") el.textContent=value;
+ });
+ document.getElementById("current-lang").textContent=activeLanguage.toUpperCase();
+ document.documentElement.lang=activeLanguage;
+ document.getElementById("tracking-input").placeholder=activeLanguage==="en"?"Transport ID (e.g. BA-12345)":(getStrings().tracking_placeholder||"Transport ID");
+}
+function flattenContent(){
+ const entries=[];
+ Object.entries(EN).forEach(([k,v])=>entries.push({id:"s:"+k,text:v}));
+ REVIEWS.forEach((r,i)=>["name","location","text"].forEach(k=>entries.push({id:`r:${i}:${k}`,text:r[k]})));
+ FAQ.forEach((f,i)=>["q","a"].forEach(k=>entries.push({id:`f:${i}:${k}`,text:f[k]})));
+ return entries;
 }
 
-function toggleFaq(i){
-  document.querySelectorAll('[id^="fa-"]').forEach(el => el.classList.add('hidden'));
-  document.querySelectorAll('[id^="fi-"]').forEach(el => el.classList.remove('rotate-180'));
-  const a = document.getElementById(`fa-${i}`);
-  const ic = document.getElementById(`fi-${i}`);
-  if (a.classList.contains('hidden')) { a.classList.remove('hidden'); ic.classList.add('rotate-180'); }
+/* MyMemory is used as a free translation endpoint. Requests are throttled,
+   retried, cached locally and safely fall back to English if unavailable. */
+async function translateOne(text,lang){
+ const url=`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en%7C${encodeURIComponent(lang)}`;
+ let lastError;
+ for(let attempt=0;attempt<2;attempt++){
+  try{
+   const response=await fetch(url,{method:"GET",headers:{"Accept":"application/json"},signal:AbortSignal.timeout(14000)});
+   if(!response.ok) throw new Error("Translation service returned "+response.status);
+   const payload=await response.json();
+   const translated=payload?.responseData?.translatedText;
+   if(translated && payload.responseStatus===200) return decodeHtml(translated);
+   if(translated && !/MYMEMORY WARNING/i.test(translated)) return decodeHtml(translated);
+   throw new Error(payload?.responseDetails||"No translation returned");
+  }catch(err){lastError=err;if(attempt===0) await new Promise(r=>setTimeout(r,700))}
+ }
+ throw lastError||new Error("Translation unavailable");
+}
+function decodeHtml(input){
+ const el=document.createElement("textarea");el.innerHTML=input;return el.value;
+}
+async function translateEntries(entries,lang,runId){
+ const output={};let cursor=0;let completed=0;let failed=0;
+ const workers=Array.from({length:8},async()=>{
+  while(cursor<entries.length){
+   const index=cursor++;const item=entries[index];
+   try{output[item.id]=await translateOne(item.text,lang)}catch(e){output[item.id]=item.text;failed++}
+   completed++;
+   // Update quietly in the background; never block or dim the visitor's page.
+  }
+ });
+ await Promise.all(workers);
+ return {output,failed};
+}
+function unpackTranslations(output){
+ const strings={...EN},reviews=REVIEWS.map(r=>({...r})),faqs=FAQ.map(f=>({...f}));
+ Object.keys(EN).forEach(k=>{strings[k]=output["s:"+k]||EN[k]});
+ REVIEWS.forEach((r,i)=>["name","location","text"].forEach(k=>reviews[i][k]=output[`r:${i}:${k}`]||r[k]));
+ FAQ.forEach((f,i)=>["q","a"].forEach(k=>faqs[i][k]=output[`f:${i}:${k}`]||f[k]));
+ return {strings,reviews,faqs};
+}
+async function setLanguage(lang){
+ if(!LANGUAGES[lang]) lang="en";
+ const runId=++translationRun;
+ activeLanguage=lang;
+ if(lang==="en"){
+  window.currentStrings={...EN};window.currentReviews=REVIEWS;window.currentFAQ=FAQ;
+  applyStrings();renderFleet();renderReviews();renderFAQs();closeLanguageMenu();return;
+ }
+ const cached=getCache(lang);
+ if(cached?.strings&&cached?.reviews&&cached?.faq){
+  window.currentStrings=cached.strings;window.currentReviews=cached.reviews;window.currentFAQ=cached.faq;
+  applyStrings();renderFleet();renderReviews();renderFAQs();closeLanguageMenu();return;
+ }
+ // Translate in the background without showing a prompt, spinner or blocking overlay.
+ const toast=document.getElementById("translation-toast");
+ try{
+  const {output,failed}=await translateEntries(flattenContent(),lang,runId);
+  if(runId!==translationRun)return;
+  const unpacked=unpackTranslations(output);
+  window.currentStrings=unpacked.strings;window.currentReviews=unpacked.reviews;window.currentFAQ=unpacked.faqs;
+  saveCache(lang,{strings:unpacked.strings,reviews:unpacked.reviews,faq:unpacked.faq});
+  applyStrings();renderFleet();renderReviews();renderFAQs();
+  // Any unavailable phrase quietly remains in English; the page stays usable.
+  try{localStorage.setItem("ba_preferred_language",lang)}catch{}
+ }catch(error){
+  console.error("Translation error:",error);
+  if(runId===translationRun){
+   window.currentStrings={...EN};window.currentReviews=REVIEWS;window.currentFAQ=FAQ;
+   applyStrings();renderFleet();renderReviews();renderFAQs();
+   // Translation failure is silent; visitors continue seeing the original English page.
+  }
+ }finally{
+  closeLanguageMenu();
+ }
+}
+function closeLanguageMenu(){
+ document.getElementById("lang-menu").classList.remove("open");
+ document.getElementById("lang-toggle").setAttribute("aria-expanded","false");
+}
+function populateLanguages(filter=""){
+ const list=document.getElementById("language-list");list.innerHTML="";
+ Object.entries(LANGUAGES).filter(([code,name])=>!filter||name.toLowerCase().includes(filter.toLowerCase())||code.includes(filter.toLowerCase())).sort((a,b)=>a[1].localeCompare(b[1])).forEach(([code,name])=>{
+  const button=document.createElement("button");button.type="button";button.className="lang-option";
+  const label=document.createElement("span");label.textContent=name;
+  const short=document.createElement("small");short.textContent=code.toUpperCase();
+  button.append(label,short);button.addEventListener("click",()=>setLanguage(code));list.append(button);
+ });
+}
+function toggleLanguageMenu(){
+ const menu=document.getElementById("lang-menu"),open=!menu.classList.contains("open");
+ menu.classList.toggle("open",open);document.getElementById("lang-toggle").setAttribute("aria-expanded",String(open));
+ if(open)document.getElementById("lang-search").focus();
+}
+function detectLanguage(){
+ const browser=(navigator.languages&&navigator.languages[0])||navigator.language||"en";
+ const code=browser.toLowerCase().split("-")[0];
+ return LANGUAGES[code]?code:"en";
 }
 
-function populateLanguages(filter = ''){
-  const c = document.getElementById('language-list');
-  c.innerHTML = '';
-  Object.keys(LANG_MAP).forEach(code => {
-    const name = LANG_MAP[code];
-    if (filter && !name.toLowerCase().includes(filter.toLowerCase()) && !code.includes(filter.toLowerCase())) return;
-    const div = document.createElement('div');
-    div.className = "px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center justify-between text-gray-700 text-sm";
-    div.innerHTML = `<span>${name}</span><span class="text-[10px] text-gray-400 font-mono">${code.toUpperCase()}</span>`;
-    div.onclick = () => {
-      setLanguage(code);
-      document.getElementById('lang-dropdown').classList.remove('show');
-    };
-    c.appendChild(div);
-  });
-}
-
-function toggleLangDropdown(){
-  const dd = document.getElementById('lang-dropdown');
-  const btn = dd.previousElementSibling;
-  const rect = btn.getBoundingClientRect();
-  dd.style.top = (rect.bottom + 8) + 'px';
-  dd.style.right = Math.max(8, window.innerWidth - rect.right) + 'px';
-  dd.classList.toggle('show');
-}
-
-document.addEventListener('click', e => {
-  if (!e.target.closest('.relative')) document.getElementById('lang-dropdown').classList.remove('show');
+document.getElementById("lang-toggle").addEventListener("click",toggleLanguageMenu);
+document.getElementById("lang-search").addEventListener("input",e=>populateLanguages(e.target.value));
+document.addEventListener("click",e=>{
+ if(!e.target.closest(".lang-wrap"))closeLanguageMenu();
 });
-document.addEventListener('input', e => {
-  if (e.target.id === 'lang-search') populateLanguages(e.target.value);
+document.getElementById("menu-toggle").addEventListener("click",()=>{
+ const nav=document.getElementById("mobile-links"),open=nav.classList.toggle("open");
+ document.getElementById("menu-toggle").setAttribute("aria-expanded",String(open));
+ document.getElementById("menu-toggle").innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
 });
-window.addEventListener('scroll', () => document.getElementById('lang-dropdown').classList.remove('show'), { passive:true });
-window.addEventListener('resize', () => document.getElementById('lang-dropdown').classList.remove('show'));
-
-function closeLangModal(shouldSwitch){
-  const m = document.getElementById('lang-modal');
-  m.classList.add('hidden');
-  if (!shouldSwitch) setLanguage('en');
+document.querySelectorAll("#mobile-links a").forEach(a=>a.addEventListener("click",()=>{
+ document.getElementById("mobile-links").classList.remove("open");
+ document.getElementById("menu-toggle").setAttribute("aria-expanded","false");
+ document.getElementById("menu-toggle").innerHTML='<i class="fa-solid fa-bars"></i>';
+}));
+document.getElementById("faq-container").addEventListener("click",e=>{
+ const button=e.target.closest(".faq-question");if(!button)return;
+ const item=button.closest(".faq-item"),wasOpen=item.classList.contains("active");
+ document.querySelectorAll(".faq-item").forEach(el=>{el.classList.remove("active");el.querySelector("button").setAttribute("aria-expanded","false")});
+ if(!wasOpen){item.classList.add("active");button.setAttribute("aria-expanded","true")}
+});
+document.getElementById("track-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ const id=document.getElementById("tracking-input").value.trim();
+ if(!id)return;
+ const message=`Hello Bianka Animalier, I would like an update on my pet transport. My Transport ID is: ${id}`;
+ const result=document.getElementById("track-result");
+ result.textContent="Your request is ready. Select the WhatsApp link to send your Transport ID to the transport team.";
+ const link=document.createElement("a");link.href="https://wa.me/4367858226893?text="+encodeURIComponent(message);
+ link.target="_blank";link.rel="noopener";link.className="btn btn-primary";link.style.marginTop="12px";link.textContent="Send tracking request on WhatsApp";
+ result.append(document.createElement("br"),link);result.style.display="block";
+});
+function cookieInit(){
+ let consent=null;try{consent=localStorage.getItem("ba_cookie_consent")}catch{}
+ if(!consent)setTimeout(()=>document.getElementById("cookie-banner").classList.add("show"),900);
 }
-function trackOrder(){
-  const v = document.getElementById('tracking-input').value.trim();
-  if (!v) return;
-  const r = document.getElementById('tracking-result');
-  r.classList.remove('hidden');
-  document.getElementById('progress-bar').style.width = (Math.floor(Math.random()*40)+40) + '%';
-  document.getElementById('track-eta').innerText = (Math.floor(Math.random()*3)+1) + " Days";
-  r.scrollIntoView({behavior:'smooth', block:'center'});
+function setCookie(value){
+ try{localStorage.setItem("ba_cookie_consent",value)}catch{}
+ document.getElementById("cookie-banner").classList.remove("show");
 }
-function toggleMobileMenu(){ document.getElementById('mobile-menu').classList.toggle('hidden'); }
-function showCookieConsent(){ if (!localStorage.getItem('cookieConsent')) setTimeout(() => document.getElementById('cookie-consent').classList.add('show'), 1200); }
-function acceptCookies(){ localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookie-consent').classList.remove('show'); }
-function declineCookies(){ localStorage.setItem('cookieConsent','declined'); document.getElementById('cookie-consent').classList.remove('show'); }
+document.getElementById("cookie-yes").addEventListener("click",()=>setCookie("accepted"));
+document.getElementById("cookie-no").addEventListener("click",()=>setCookie("declined"));
 
 async function init(){
-  populateLanguages();
-  applyStrings();
-  renderFleet();
-  renderReviews();
-  renderFAQs();
-  showCookieConsent();
-
-  const stored = localStorage.getItem('preferredLang');
-  if (stored && stored !== 'en'){
-    setLanguage(stored);
-    return;
-  }
-
-  const raw = navigator.language || navigator.userLanguage || 'en';
-  const deviceLang = raw.split('-')[0].toLowerCase();
-
-  if (deviceLang === 'en'){
-    setLanguage('en');
-    return;
-  }
-
-  const friendlyName = LANG_MAP[deviceLang] || raw;
-  document.getElementById('detected-country').innerText = friendlyName;
-  document.getElementById('lang-modal').classList.remove('hidden');
-
-  await setLanguage(deviceLang);
-  localStorage.setItem('preferredLang', deviceLang);
+ document.getElementById("year").textContent=new Date().getFullYear();
+ window.currentStrings={...EN};window.currentReviews=REVIEWS;window.currentFAQ=FAQ;
+ populateLanguages();applyStrings();renderFleet();renderReviews();renderFAQs();cookieInit();
+ let saved=null;try{saved=localStorage.getItem("ba_preferred_language")}catch{}
+ const detected=detectLanguage();
+ // Apply the visitor's saved choice; otherwise translate automatically to the browser language.
+ await setLanguage(saved&&LANGUAGES[saved]?saved:detected);
 }
-
-window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 50));
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener("DOMContentLoaded",init);
 </script>
 </body>
 </html>
