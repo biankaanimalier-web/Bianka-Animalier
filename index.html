@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10243b">
-<meta name="description" content="Professional door-to-door pet transport across Europe with caring handlers and GPS updates.">
-<title>Bianka Animalier | Professional Pet Transport Across Europe</title>
+<meta name="description" content="Profesionální přeprava domácích mazlíčků od dveří ke dveřím po celé Evropě, se zkušeným personálem a aktuálními informacemi o cestě.">
+<title>Bianka Animalier | Profesionální přeprava zvířat po Evropě</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,7 @@ button{cursor:pointer}
 .nav-actions{display:flex;align-items:center;gap:12px}
 .lang-wrap{position:relative}
 .lang-toggle{border:1px solid var(--line);background:white;border-radius:10px;padding:9px 11px;color:var(--navy);font-weight:800;font-size:.82rem}
-.lang-menu{display:none;position:absolute;right:0;top:calc(100% + 10px);width:min(310px,calc(100vw - 28px));max-height: min(65vh,430px);overflow:auto;background:white;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);padding:9px;z-index:50}
+.lang-menu{display:none;position:absolute;right:0;top:calc(100% + 10px);width:min(310px,calc(100vw - 28px));max-height:min(65vh,430px);overflow:auto;background:white;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);padding:9px;z-index:50}
 .lang-menu.open{display:block}
 .lang-search{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px}
 .lang-option{width:100%;border:0;background:white;text-align:left;padding:9px 10px;border-radius:8px;display:flex;justify-content:space-between;gap:10px;color:var(--ink)}
@@ -106,7 +106,9 @@ button{cursor:pointer}
 .fleet-card:after{content:"";position:absolute;inset:25% 0 0;background:linear-gradient(transparent,rgba(7,22,38,.88))}
 .fleet-caption{position:absolute;z-index:1;left:22px;right:22px;bottom:20px;color:white}
 .fleet-caption h3{font:800 1.15rem Manrope,sans-serif}
-.fleet-caption p{font-size:.85rem;color:#d2deea}.fleet-card.image-unavailable img{visibility:hidden}.fleet-card.image-unavailable{background:linear-gradient(135deg,#dbe5ee,#aebfce)}
+.fleet-caption p{font-size:.85rem;color:#d2deea}
+.fleet-card.image-unavailable img{visibility:hidden}
+.fleet-card.image-unavailable{background:linear-gradient(135deg,#dbe5ee,#aebfce)}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .review-card{padding:25px;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 6px 20px rgba(16,36,59,.035)}
 .stars{color:#f5a623;letter-spacing:2px;margin-bottom:13px}
@@ -196,37 +198,37 @@ button{cursor:pointer}
 <body>
 <div class="topline">
  <div class="container topline-inner">
-  <span><i class="fa-solid fa-globe-europe"></i> <span data-key="topline_text">Pet transport across Europe</span></span>
-  <span><i class="fa-regular fa-clock"></i> <span data-key="topline_support">Support and booking enquiries</span></span>
+  <span><i class="fa-solid fa-globe-europe"></i> <span>Přeprava domácích mazlíčků po celé Evropě</span></span>
+  <span><i class="fa-regular fa-clock"></i> <span>Podpora a dotazy k rezervacím</span></span>
   <a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +43 678 58226893</a>
  </div>
 </div>
 
 <header class="nav">
  <div class="container nav-inner">
-  <a class="brand" href="#home" aria-label="Bianka Animalier home">
+  <a class="brand" href="#home" aria-label="Bianka Animalier – domů">
    <span class="brand-mark"><i class="fa-solid fa-paw"></i></span>
    <span class="brand-name">Bianka <span>Animalier</span></span>
   </a>
-  <nav class="nav-links" aria-label="Main navigation">
-   <a href="#services" data-key="nav_services">Services</a><a href="#fleet" data-key="nav_fleet">Our Fleet</a>
-   <a href="#reviews" data-key="nav_reviews">Reviews</a><a href="#track" data-key="nav_track">Track Order</a><a href="#faq" data-key="nav_faq">FAQ</a>
+  <nav class="nav-links" aria-label="Hlavní navigace">
+   <a href="#services">Služby</a><a href="#fleet">Náš vozový park</a>
+   <a href="#reviews">Recenze</a><a href="#track">Sledování přepravy</a><a href="#faq">Časté dotazy</a>
   </nav>
   <div class="nav-actions">
    <div class="lang-wrap">
-    <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false"><i class="fa-solid fa-globe"></i> <span id="current-lang">EN</span> <i class="fa-solid fa-chevron-down"></i></button>
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false" aria-label="Jazyk"><i class="fa-solid fa-globe"></i> <span id="current-lang">CS</span> <i class="fa-solid fa-chevron-down"></i></button>
     <div class="lang-menu" id="lang-menu">
-     <input class="lang-search" id="lang-search" type="search" placeholder="Search language..." aria-label="Search language">
+     <input class="lang-search" id="lang-search" type="search" placeholder="Hledat jazyk…" aria-label="Hledat jazyk">
      <div id="language-list"></div>
     </div>
    </div>
-   <a class="btn btn-primary nav-cta" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="nav_whatsapp">WhatsApp</span></a>
-   <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+   <a class="btn btn-primary nav-cta" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+   <button class="menu-toggle" id="menu-toggle" aria-label="Otevřít nabídku" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
   </div>
  </div>
- <nav class="mobile-links" id="mobile-links" aria-label="Mobile navigation">
-  <a href="#services" data-key="nav_services">Services</a><a href="#fleet" data-key="nav_fleet">Our Fleet</a>
-  <a href="#reviews" data-key="nav_reviews">Reviews</a><a href="#track" data-key="nav_track">Track Order</a><a href="#faq" data-key="nav_faq">FAQ</a>
+ <nav class="mobile-links" id="mobile-links" aria-label="Mobilní navigace">
+  <a href="#services">Služby</a><a href="#fleet">Náš vozový park</a>
+  <a href="#reviews">Recenze</a><a href="#track">Sledování přepravy</a><a href="#faq">Časté dotazy</a>
   <a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
  </nav>
 </header>
@@ -235,69 +237,69 @@ button{cursor:pointer}
 <section class="hero" id="home">
  <div class="container hero-grid">
   <div class="hero-copy">
-   <div class="hero-badge"><span class="live-dot"></span><span data-key="hero_badge">Trusted by 2,400+ families across Europe</span></div>
-   <h1><span data-key="hero_title_1">Safe, Stress-Free</span><br><span data-key="hero_title_2">Pet Transport</span></h1>
-   <p data-key="hero_subtitle">Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.</p>
+   <div class="hero-badge"><span class="live-dot"></span><span>Důvěřuje nám více než 2 400 rodin po celé Evropě</span></div>
+   <h1><span>Bezpečná přeprava</span><br><span>bez zbytečného stresu</span></h1>
+   <p>Profesionální přeprava domácích mazlíčků od dveří ke dveřím po celé Evropě. S potřebnými licencemi, pojištěním a GPS sledováním.</p>
    <div class="hero-buttons">
-    <a class="btn btn-primary" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="hero_cta">Get a Free Quote</span></a>
-    <a class="btn btn-outline" href="#services"><span data-key="hero_cta2">Explore Our Services</span><i class="fa-solid fa-arrow-right"></i></a>
+    <a class="btn btn-primary" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Získat nezávaznou nabídku</a>
+    <a class="btn btn-outline" href="#services">Prohlédnout služby <i class="fa-solid fa-arrow-right"></i></a>
    </div>
    <div class="hero-stats">
-    <div class="stat"><strong>100%</strong><span data-key="stat_safe">Safe Delivery</span></div>
-    <div class="stat"><strong>2.4K+</strong><span data-key="stat_pets">Happy Pets</span></div>
-    <div class="stat"><strong>4.9 <span aria-hidden="true">★</span></strong><span data-key="stat_rating">Client Rating</span></div>
+    <div class="stat"><strong>100%</strong><span>Bezpečné doručení</span></div>
+    <div class="stat"><strong>2,4 tis.+</strong><span>Spokojení mazlíčci</span></div>
+    <div class="stat"><strong>4,9 <span aria-hidden="true">★</span></strong><span>Hodnocení klientů</span></div>
    </div>
   </div>
   <div class="hero-visual">
-   <img class="hero-photo" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=88" alt="Two happy dogs outdoors" fetchpriority="high">
-   <div class="photo-note"><span class="note-icon"><i class="fa-solid fa-shield-heart"></i></span><span><strong data-key="hero_card_title">Care at every step</strong><small data-key="hero_card_sub">Updates throughout the journey</small></span></div>
+   <img class="hero-photo" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=88" data-fallback="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1100" alt="Dva spokojení psi venku" fetchpriority="high">
+   <div class="photo-note"><span class="note-icon"><i class="fa-solid fa-shield-heart"></i></span><span><strong>Péče na každém kroku</strong><small>Informace během celé cesty</small></span></div>
   </div>
  </div>
 </section>
 
-<section class="trust-strip" aria-label="Service assurances">
+<section class="trust-strip" aria-label="Záruky a informace o službě">
  <div class="container trust-grid">
-  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-certificate"></i></span><span><strong data-key="trust_1">Fully Licensed</strong><small data-key="trust_1_sub">EU Pet Transport</small></span></div>
-  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-shield-halved"></i></span><span><strong data-key="trust_2">Fully Insured</strong><small data-key="trust_2_sub">€2M Coverage</small></span></div>
-  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-user-doctor"></i></span><span><strong data-key="trust_3">Vet Approved</strong><small data-key="trust_3_sub">Certified Handlers</small></span></div>
-  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-location-dot"></i></span><span><strong data-key="trust_4">GPS Tracked</strong><small data-key="trust_4_sub">Real-time Updates</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-certificate"></i></span><span><strong>Plně licencovaná služba</strong><small>Přeprava zvířat v EU</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-shield-halved"></i></span><span><strong>Plně pojištěno</strong><small>Krytí 2 mil. €</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-user-doctor"></i></span><span><strong>Veterinárně schváleno</strong><small>Certifikovaný personál</small></span></div>
+  <div class="trust-item"><span class="trust-icon"><i class="fa-solid fa-location-dot"></i></span><span><strong>Sledování GPS</strong><small>Aktuální informace</small></span></div>
  </div>
 </section>
 
 <section class="section" id="services">
  <div class="container">
-  <div class="section-head"><span class="eyebrow" data-key="services_label">What We Offer</span><h2 data-key="services_title">Professional Pet Transport Services</h2><p data-key="services_subtitle">From short local trips to cross-border relocations, we make every journey more comfortable.</p></div>
+  <div class="section-head"><span class="eyebrow">Co nabízíme</span><h2>Profesionální přeprava domácích mazlíčků</h2><p>Od krátkých místních cest až po přeshraniční přepravu – snažíme se, aby každá cesta byla co nejpohodlnější.</p></div>
   <div class="cards-3">
-   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-car-side"></i></div><h3 data-key="step1_title">1. Gentle Pickup</h3><p data-key="step1_desc">Our trained agents collect your pet with care and attention.</p></article>
-   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div><h3 data-key="step2_title">2. Safe Transport</h3><p data-key="step2_desc">Climate-controlled vehicles and planned comfort stops help make the journey safer.</p></article>
-   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-house"></i></div><h3 data-key="step3_title">3. Happy Arrival</h3><p data-key="step3_desc">Door-to-door delivery, with care taken right through to arrival.</p></article>
+   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-car-side"></i></div><h3>1. Šetrné vyzvednutí</h3><p>Naši vyškolení pracovníci vašeho mazlíčka vyzvednou s péčí a pozorností.</p></article>
+   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div><h3>2. Bezpečná přeprava</h3><p>Vozidla s regulovanou teplotou a plánované přestávky přispívají k bezpečnější a pohodlnější cestě.</p></article>
+   <article class="service-card"><div class="service-icon"><i class="fa-solid fa-house"></i></div><h3>3. Šťastný příjezd</h3><p>Doručení od dveří ke dveřím s péčí věnovanou vašemu mazlíčkovi až do cíle.</p></article>
   </div>
  </div>
 </section>
 
 <section class="section section-soft" id="fleet">
  <div class="container">
-  <div class="section-head"><span class="eyebrow" data-key="fleet_label">Our Vehicles</span><h2 data-key="fleet_title">A Fleet Designed for Pet Journeys</h2><p data-key="fleet_subtitle">Specialized transport, experienced handlers and practical travel equipment.</p></div>
+  <div class="section-head"><span class="eyebrow">Naše vozidla</span><h2>Vozový park pro přepravu zvířat</h2><p>Specializovaná přeprava, zkušení pracovníci a praktické vybavení pro cestování.</p></div>
   <div class="fleet-grid" id="fleet-container"></div>
  </div>
 </section>
 
 <section class="section" id="reviews">
  <div class="container">
-  <div class="section-head"><span class="eyebrow" data-key="reviews_label">Testimonials</span><h2 data-key="reviews_title">What Our Customers Say</h2><p data-key="reviews_subtitle">Experiences shared by pet owners across Europe.</p></div>
+  <div class="section-head"><span class="eyebrow">Reference</span><h2>Co říkají naši zákazníci</h2><p>Zkušenosti majitelů domácích mazlíčků z celé Evropy.</p></div>
   <div class="reviews-grid" id="reviews-container"></div>
  </div>
 </section>
 
 <section class="section track-section" id="track">
  <div class="container">
-  <div class="section-head"><span class="eyebrow" style="color:#9dccff" data-key="track_label">Journey Updates</span><h2 style="color:white" data-key="track_title">Track Your Delivery</h2><p style="color:#c4d2df" data-key="track_subtitle">Enter your Transport ID to request an update on your pet's journey.</p></div>
+  <div class="section-head"><span class="eyebrow" style="color:#9dccff">Informace o cestě</span><h2 style="color:white">Sledujte svou přepravu</h2><p style="color:#c4d2df">Zadejte ID přepravy a požádejte o aktuální informace o cestě vašeho mazlíčka.</p></div>
   <div class="track-panel">
    <form class="track-form" id="track-form">
-    <input id="tracking-input" type="text" placeholder="Transport ID (e.g. BA-12345)" autocomplete="off" required>
-    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span data-key="btn_track">Request Update</span></button>
+    <input id="tracking-input" type="text" placeholder="ID přepravy (např. BA-12345)" autocomplete="off" required>
+    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Požádat o informace</button>
    </form>
-   <p class="track-hint" data-key="track_hint">Tracking updates are confirmed by our transport team. Submit your ID to contact us on WhatsApp.</p>
+   <p class="track-hint">Informace o průběhu přepravy potvrzuje náš přepravní tým. Zadejte své ID a kontaktujte nás přes WhatsApp.</p>
    <div class="track-result" id="track-result" role="status" aria-live="polite"></div>
   </div>
  </div>
@@ -305,15 +307,15 @@ button{cursor:pointer}
 
 <section class="section section-soft" id="faq">
  <div class="container">
-  <div class="section-head"><span class="eyebrow" data-key="faq_label">Need to Know</span><h2 data-key="faq_title">Frequently Asked Questions</h2><p data-key="faq_subtitle">Helpful answers before you arrange your pet's journey.</p></div>
+  <div class="section-head"><span class="eyebrow">Užitečné informace</span><h2>Často kladené dotazy</h2><p>Odpovědi, které vám pomohou před sjednáním přepravy vašeho mazlíčka.</p></div>
   <div class="faq-list" id="faq-container"></div>
  </div>
 </section>
 
 <section class="contact-band">
  <div class="container contact-inner">
-  <div><h2 data-key="contact_title">Planning a journey for your pet?</h2><p data-key="contact_subtitle">Contact our team to discuss routes, documents and arrangements.</p></div>
-  <a class="btn btn-primary" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="contact_cta">Talk to Our Team</span></a>
+  <div><h2>Plánujete cestu pro svého mazlíčka?</h2><p>Kontaktujte náš tým a proberte s námi trasu, dokumenty a potřebné zajištění přepravy.</p></div>
+  <a class="btn btn-primary" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Kontaktovat náš tým</a>
  </div>
 </section>
 </main>
@@ -321,85 +323,54 @@ button{cursor:pointer}
 <footer class="footer">
  <div class="container">
   <div class="footer-grid">
-   <div><div class="brand footer-brand"><span class="brand-mark"><i class="fa-solid fa-paw"></i></span><span class="brand-name" style="color:white">Bianka <span>Animalier</span></span></div><p data-key="footer_desc">Professional pet transport and relocation services across Europe.</p><div class="socials"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div></div>
-   <div><h4 data-key="footer_links">Quick Links</h4><ul><li><a href="#home" data-key="nav_home">Home</a></li><li><a href="#services" data-key="nav_services">Services</a></li><li><a href="#fleet" data-key="nav_fleet">Our Fleet</a></li><li><a href="#reviews" data-key="nav_reviews">Reviews</a></li></ul></div>
-   <div><h4 data-key="footer_contact">Contact Us</h4><ul><li><i class="fa-solid fa-location-dot"></i> <span data-key="footer_eu">Operating across EU states</span></li><li><a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +43 678 58226893</a></li><li><a href="mailto:Biankaanimalier@gmail.com"><i class="fa-regular fa-envelope"></i> Biankaanimalier@gmail.com</a></li></ul></div>
-   <div><h4 data-key="footer_urgent">Need Assistance?</h4><p data-key="footer_whatsapp">Contact us on WhatsApp for booking enquiries and journey updates.</p><a class="btn btn-primary" style="margin-top:15px" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span data-key="btn_chat">Start a Chat</span></a></div>
+   <div><div class="brand footer-brand"><span class="brand-mark"><i class="fa-solid fa-paw"></i></span><span class="brand-name" style="color:white">Bianka <span>Animalier</span></span></div><p>Profesionální přeprava a přemístění domácích mazlíčků po celé Evropě.</p><div class="socials"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div></div>
+   <div><h4>Rychlé odkazy</h4><ul><li><a href="#home">Domů</a></li><li><a href="#services">Služby</a></li><li><a href="#fleet">Náš vozový park</a></li><li><a href="#reviews">Recenze</a></li></ul></div>
+   <div><h4>Kontaktujte nás</h4><ul><li><i class="fa-solid fa-location-dot"></i> <span>Působíme v zemích EU</span></li><li><a href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +43 678 58226893</a></li><li><a href="mailto:Biankaanimalier@gmail.com"><i class="fa-regular fa-envelope"></i> Biankaanimalier@gmail.com</a></li></ul></div>
+   <div><h4>Potřebujete pomoc?</h4><p>Kontaktujte nás přes WhatsApp ohledně rezervací a informací o průběhu přepravy.</p><a class="btn btn-primary" style="margin-top:15px" href="https://wa.me/4367858226893" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Zahájit konverzaci</a></div>
   </div>
-  <div class="footer-bottom"><span>© <span id="year"></span> Bianka Animalier. <span data-key="footer_rights">All rights reserved.</span></span><span><a href="#" data-key="footer_privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" data-key="footer_terms">Terms of Service</a></span></div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Bianka Animalier. Všechna práva vyhrazena.</span><span><a href="#">Zásady ochrany osobních údajů</a> &nbsp;·&nbsp; <a href="#">Obchodní podmínky</a></span></div>
  </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/4367858226893" target="_blank" rel="noopener" aria-label="Contact Bianka Animalier on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<a class="float-wa" href="https://wa.me/4367858226893" target="_blank" rel="noopener" aria-label="Kontaktovat Bianka Animalier přes WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-<div class="toast" id="translation-toast"><i class="fa-solid fa-circle-notch fa-spin"></i> <span data-key="translating">Translating page…</span></div>
-<div class="cookie" id="cookie-banner"><p data-key="cookie_text">We use cookies to remember your language and improve your browsing experience.</p><div class="cookie-actions"><button class="cookie-yes" id="cookie-yes" data-key="cookie_accept">Accept</button><button class="cookie-no" id="cookie-no" data-key="cookie_decline">Decline</button></div></div>
+<div class="cookie" id="cookie-banner"><p>Používáme soubory cookie k zapamatování vašeho jazyka a ke zlepšení procházení těchto stránek.</p><div class="cookie-actions"><button class="cookie-yes" id="cookie-yes">Přijmout</button><button class="cookie-no" id="cookie-no">Odmítnout</button></div></div>
 
 <script>
 "use strict";
 
-/* English source strings. These keys drive both the static page and language switching. */
-const EN = {
- topline_text:"Pet transport across Europe",topline_support:"Support and booking enquiries",
- nav_home:"Home",nav_services:"Services",nav_fleet:"Our Fleet",nav_reviews:"Reviews",nav_track:"Track Order",nav_faq:"FAQ",nav_whatsapp:"WhatsApp",
- hero_badge:"Trusted by 2,400+ families across Europe",hero_title_1:"Safe, Stress-Free",hero_title_2:"Pet Transport",
- hero_subtitle:"Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.",
- hero_cta:"Get a Free Quote",hero_cta2:"Explore Our Services",hero_card_title:"Care at every step",hero_card_sub:"Updates throughout the journey",
- stat_safe:"Safe Delivery",stat_pets:"Happy Pets",stat_rating:"Client Rating",
- trust_1:"Fully Licensed",trust_1_sub:"EU Pet Transport",trust_2:"Fully Insured",trust_2_sub:"€2M Coverage",trust_3:"Vet Approved",trust_3_sub:"Certified Handlers",trust_4:"GPS Tracked",trust_4_sub:"Real-time Updates",
- services_label:"What We Offer",services_title:"Professional Pet Transport Services",services_subtitle:"From short local trips to cross-border relocations, we make every journey more comfortable.",
- step1_title:"1. Gentle Pickup",step1_desc:"Our trained agents collect your pet with care and attention.",step2_title:"2. Safe Transport",step2_desc:"Climate-controlled vehicles and planned comfort stops help make the journey safer.",step3_title:"3. Happy Arrival",step3_desc:"Door-to-door delivery, with care taken right through to arrival.",
- fleet_label:"Our Vehicles",fleet_title:"A Fleet Designed for Pet Journeys",fleet_subtitle:"Specialized transport, experienced handlers and practical travel equipment.",
- fleet_van:"Pet Delivery Van",fleet_van_desc:"Climate-controlled and GPS-tracked transport vehicles.",
- fleet_agent:"Professional Pet Handlers",fleet_agent_desc:"Experienced handlers who care for pets during the journey.",
- fleet_carrier:"Secure Pet Carriers",fleet_carrier_desc:"Secure travel crates and suitable pet equipment.",
- fleet_truck:"Long-Distance Transport",fleet_truck_desc:"Transport solutions for journeys across countries.",
- fleet_door:"Door-to-Door Service",fleet_door_desc:"Collection and delivery arranged around your route.",
- fleet_happy:"Comfortable Arrivals",fleet_happy_desc:"Care and attention from collection to arrival.",
- fleet_rabbit:"Rabbit Transport",fleet_rabbit_desc:"Small pets prepared in secure, suitable carriers.",fleet_bird:"Bird Transport",fleet_bird_desc:"Careful handling and suitable travel arrangements for birds.",fleet_horse:"Horse Transport",fleet_horse_desc:"Purpose-built vehicles and loading equipment for horses.",fleet_smallpets:"Small Animal Transport",fleet_smallpets_desc:"Individual enclosures for smaller companion animals.",fleet_mixedpets:"Dogs and Cats",fleet_mixedpets_desc:"Different companion animals travelling with trained handlers.",fleet_travel:"Secure Travel Spaces",fleet_travel_desc:"Separate, secure spaces for pets travelling by road.",
- reviews_label:"Testimonials",reviews_title:"What Our Customers Say",reviews_subtitle:"Experiences shared by pet owners across Europe.",
- track_label:"Journey Updates",track_title:"Track Your Delivery",track_subtitle:"Enter your Transport ID to request an update on your pet's journey.",
- btn_track:"Request Update",track_hint:"Tracking updates are confirmed by our transport team. Submit your ID to contact us on WhatsApp.",
- faq_label:"Need to Know",faq_title:"Frequently Asked Questions",faq_subtitle:"Helpful answers before you arrange your pet's journey.",
- contact_title:"Planning a journey for your pet?",contact_subtitle:"Contact our team to discuss routes, documents and arrangements.",contact_cta:"Talk to Our Team",
- footer_desc:"Professional pet transport and relocation services across Europe.",footer_links:"Quick Links",footer_contact:"Contact Us",footer_eu:"Operating across EU states",footer_urgent:"Need Assistance?",footer_whatsapp:"Contact us on WhatsApp for booking enquiries and journey updates.",btn_chat:"Start a Chat",footer_rights:"All rights reserved.",footer_privacy:"Privacy Policy",footer_terms:"Terms of Service",
- cookie_text:"We use cookies to remember your language and improve your browsing experience.",cookie_accept:"Accept",cookie_decline:"Decline",
- translating:"Translating page automatically…"
-};
-
 const REVIEWS = [
- {name:"Maria G.",location:"Madrid, Spain",text:"Bianka Animalier delivered my Golden Retriever puppy from Germany to Spain in perfect condition. The driver sent photos every few hours!"},
- {name:"Thomas B.",location:"Vienna, Austria",text:"I was nervous about transporting my cat across Europe, but the team was incredibly professional. The updates gave me peace of mind."},
- {name:"Sophie L.",location:"Rome, Italy",text:"Our two French Bulldogs arrived safely from Paris to Rome. The drivers clearly love animals and cared for them during rest stops!"},
- {name:"Jan D.",location:"Amsterdam, Netherlands",text:"Fast, reliable, and caring. My parrot arrived in Amsterdam from Lisbon with all documentation handled perfectly."},
- {name:"Anna K.",location:"Berlin, Germany",text:"The WhatsApp updates were fantastic! I knew where my puppy was during the journey. From Warsaw to Berlin in just 2 days."},
- {name:"Lars N.",location:"Copenhagen, Denmark",text:"Professional service from start to finish. They handled the EU pet passport paperwork and delivered my dog safely."}
+ {name:"Maria G.",location:"Madrid, Španělsko",text:"Bianka Animalier přepravila mé štěně zlatého retrívra z Německa do Španělska v naprostém pořádku. Řidič mi každých několik hodin posílal fotografie!"},
+ {name:"Thomas B.",location:"Vídeň, Rakousko",text:"Měl jsem obavy z přepravy své kočky přes Evropu, ale tým byl neuvěřitelně profesionální. Pravidelné informace mě uklidnily."},
+ {name:"Sophie L.",location:"Řím, Itálie",text:"Naši dva francouzští buldočci dorazili bezpečně z Paříže do Říma. Řidiči mají očividně rádi zvířata a během přestávek se o ně starali!"},
+ {name:"Jan D.",location:"Amsterdam, Nizozemsko",text:"Rychlá, spolehlivá a ohleduplná služba. Můj papoušek dorazil z Lisabonu do Amsterdamu a veškerá dokumentace byla perfektně vyřízena."},
+ {name:"Anna K.",location:"Berlín, Německo",text:"Informace přes WhatsApp byly skvělé! Během cesty jsem věděla, kde se moje štěně nachází. Z Varšavy do Berlína dorazilo za pouhé dva dny."},
+ {name:"Lars N.",location:"Kodaň, Dánsko",text:"Profesionální služba od začátku až do konce. Pomohli s dokumenty k evropskému pasu zvířete a mého psa bezpečně doručili."}
 ];
 const FAQ = [
- {q:"Is pet transport safe?",a:"We use specialized vehicles and take care to make journeys as comfortable as possible. Ask our team about the arrangements for your route and pet."},
- {q:"Do you handle paperwork?",a:"We can advise on the documentation needed for your journey, including pet passports and health certificates. Requirements depend on the countries involved."},
- {q:"How long does transport take?",a:"Delivery times depend on the route, distance, schedule and documentation. Contact us for an estimate for your journey."},
- {q:"Do you sell pets?",a:"No. Bianka Animalier provides pet transport and logistics services."},
- {q:"Can I receive updates during the journey?",a:"Contact our team to arrange journey updates and find out which tracking options are available for your booking."},
- {q:"What areas do you cover?",a:"The service operates across EU states, with additional routes subject to confirmation. Contact us with your collection and delivery locations."},
- {q:"How do I book?",a:"Contact us on WhatsApp at +43 678 58226893 or email Biankaanimalier@gmail.com with your route and pet details."},
- {q:"Do you offer insurance?",a:"The company states that transports are insured. Contact the team for the applicable coverage terms for your booking."}
+ {q:"Je přeprava zvířat bezpečná?",a:"Používáme specializovaná vozidla a dbáme na to, aby byla cesta pro zvířata co nejpohodlnější. Informujte se u našeho týmu o konkrétních podmínkách přepravy pro vaši trasu a vašeho mazlíčka."},
+ {q:"Zajišťujete potřebné dokumenty?",a:"Můžeme vám poradit s dokumentací potřebnou pro cestu, včetně pasů zvířat a veterinárních osvědčení. Požadavky se liší podle zemí, kterých se přeprava týká."},
+ {q:"Jak dlouho přeprava trvá?",a:"Doba doručení závisí na trase, vzdálenosti, harmonogramu a potřebných dokumentech. Kontaktujte nás a připravíme odhad pro vaši cestu."},
+ {q:"Prodáváte domácí mazlíčky?",a:"Ne. Bianka Animalier poskytuje služby přepravy zvířat a související logistické služby."},
+ {q:"Mohu během cesty dostávat informace?",a:"Kontaktujte náš tým a domluvte si zasílání informací o průběhu cesty. Zároveň se dozvíte, jaké možnosti sledování jsou pro vaši rezervaci dostupné."},
+ {q:"Jaké oblasti obsluhujete?",a:"Služba působí v zemích EU; další trasy je nutné předem potvrdit. Sdělte nám místo vyzvednutí a cílovou adresu."},
+ {q:"Jak si přepravu objednám?",a:"Kontaktujte nás přes WhatsApp na čísle +43 678 58226893 nebo e-mailem na Biankaanimalier@gmail.com a uveďte trasu a informace o svém mazlíčkovi."},
+ {q:"Nabízíte pojištění?",a:"Společnost uvádí, že přeprava je pojištěna. Konkrétní podmínky a rozsah pojistného krytí pro vaši rezervaci si ověřte u přepravního týmu."}
 ];
+
 const FLEET = [
- {img:"https://static.wixstatic.com/media/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg/v1/fill/w_419%2Ch_314%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg",title:"fleet_van",desc:"fleet_van_desc",alt:"Dogs travelling with a pet transport handler"},
- {img:"https://static.wixstatic.com/media/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg/v1/fill/w_391%2Ch_294%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg",title:"fleet_agent",desc:"fleet_agent_desc",alt:"Dachshund puppy resting in a travel bed during a road journey"},
- {img:"https://static.wixstatic.com/media/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg/v1/fill/w_198%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg",title:"fleet_carrier",desc:"fleet_carrier_desc",alt:"Tabby cat resting in a pet carrier"},
- {img:"https://static.wixstatic.com/media/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg/v1/fill/w_324%2Ch_324%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg",title:"fleet_truck",desc:"fleet_truck_desc",alt:"Two small dogs secured for a car journey"},
- {img:"https://static.wixstatic.com/media/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg/v1/fill/w_197%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg",title:"fleet_door",desc:"fleet_door_desc",alt:"Pet transport van with a ramp and secure travel crates"},
- {img:"https://static.wixstatic.com/media/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg/v1/fill/w_197%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg",title:"fleet_happy",desc:"fleet_happy_desc",alt:"Rottweiler with a pet transport handler beside a van"},
- {img:"https://ruedinger.eu/images_ruedinger/tiertransport_1920x1000.jpg",title:"fleet_rabbit",desc:"fleet_rabbit_desc",alt:"Rabbit being prepared for transport in a secure carrier"},
- {img:"https://i.insider.com/6365213bff27460018ed9b39?auto=webp&format=jpeg&width=800",title:"fleet_bird",desc:"fleet_bird_desc",alt:"Blue and yellow macaw in a secure animal travel crate at an airport"},
- {img:"https://www.deutscher-galopp.de/gr-wAssets/img/meldungen/20230918-sachkundenachweis-pferdetransport/galerie/ein-pferd-beim-aufladen-in-den-transporter-galoppfoto.de.jpg",title:"fleet_horse",desc:"fleet_horse_desc",alt:"Horse being led up a ramp into a horse transport vehicle"},
- {img:"https://images.squarespace-cdn.com/content/v1/66f7648d02708a31b41bc6bc/1773752557376-NF5STQEQCT30EQYOXNX7/image-asset.jpeg",title:"fleet_smallpets",desc:"fleet_smallpets_desc",alt:"Specialized animal transport van with individual small-animal enclosures"},
- {img:"https://www.fastlaneshipments.com/services/pet-care-1.jpg",title:"fleet_mixedpets",desc:"fleet_mixedpets_desc",alt:"Dogs and cats with a transport handler beside a specialist animal transport vehicle"},
- {img:"https://www.vettaksi.com/images/new-car-backs.png",title:"fleet_travel",desc:"fleet_travel_desc",alt:"Dog and cat in separate secure compartments inside a transport van"}
+ {img:"https://static.wixstatic.com/media/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg/v1/fill/w_419%2Ch_314%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg",fallback:"https://static.wixstatic.com/media/8a7cea_24c8efc13e4c40929073aa44beb534a4~mv2.jpg",title:"Dodávka pro přepravu zvířat",desc:"Vozidla s regulovanou teplotou a GPS sledováním.",alt:"Psi cestující s pracovníkem přepravy zvířat"},
+ {img:"https://static.wixstatic.com/media/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg/v1/fill/w_391%2Ch_294%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg",fallback:"https://static.wixstatic.com/media/8a7cea_8fcf31becbcd4430acbaacf45d2bfe2a~mv2.jpg",title:"Profesionální pracovníci",desc:"Zkušení pracovníci, kteří se o zvířata během cesty starají.",alt:"Štěně jezevčíka odpočívající během cesty"},
+ {img:"https://static.wixstatic.com/media/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg/v1/fill/w_198%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg",fallback:"https://static.wixstatic.com/media/8a7cea_583e5ad847974cd9ab01fd58837c1b61~mv2.jpeg",title:"Bezpečné přepravní boxy",desc:"Bezpečné přepravní boxy a vhodné vybavení pro zvířata.",alt:"Mourovatá kočka odpočívající v přepravce"},
+ {img:"https://static.wixstatic.com/media/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg/v1/fill/w_324%2Ch_324%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg",fallback:"https://static.wixstatic.com/media/8a7cea_702d1d0623e1483d8d40ff7e8e58c8e1~mv2.jpg",title:"Dálková přeprava",desc:"Řešení pro přepravu zvířat mezi různými zeměmi.",alt:"Dva malí psi bezpečně zajištění během jízdy autem"},
+ {img:"https://static.wixstatic.com/media/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg/v1/fill/w_197%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg",fallback:"https://static.wixstatic.com/media/8a7cea_545ea56c14c846dba435075ecce5e898~mv2.jpeg",title:"Služba od dveří ke dveřím",desc:"Vyzvednutí a doručení podle dohodnuté trasy.",alt:"Dodávka pro přepravu zvířat s rampou a přepravními boxy"},
+ {img:"https://static.wixstatic.com/media/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg/v1/fill/w_197%2Ch_350%2Cq_90%2Cenc_avif%2Cquality_auto/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg",fallback:"https://static.wixstatic.com/media/8a7cea_724f2f4f76fe47c69e060ff0862fc1cd~mv2.jpeg",title:"Pohodlný příjezd",desc:"Péče a pozornost od vyzvednutí až po doručení.",alt:"Rotvajler s pracovníkem přepravy vedle dodávky"},
+ {img:"https://ruedinger.eu/images_ruedinger/tiertransport_1920x1000.jpg",fallback:"https://ruedinger.eu/images_ruedinger/tiertransport_1920x1000.jpg?backup=1",title:"Přeprava králíků",desc:"Malá zvířata přepravujeme ve vhodných a bezpečných boxech.",alt:"Králík připravovaný k přepravě v bezpečné přepravce"},
+ {img:"https://i.insider.com/6365213bff27460018ed9b39?auto=webp&format=jpeg&width=800",fallback:"https://i.insider.com/6365213bff27460018ed9b39?format=jpeg&width=800",title:"Přeprava ptáků",desc:"Šetrné zacházení a vhodné podmínky pro přepravu ptáků.",alt:"Modrožlutý ara v bezpečné přepravní kleci"},
+ {img:"https://www.deutscher-galopp.de/gr-wAssets/img/meldungen/20230918-sachkundenachweis-pferdetransport/galerie/ein-pferd-beim-aufladen-in-den-transporter-galoppfoto.de.jpg",fallback:"https://www.deutscher-galopp.de/gr-wAssets/img/meldungen/20230918-sachkundenachweis-pferdetransport/galerie/ein-pferd-beim-aufladen-in-den-transporter-galoppfoto.de.jpg?backup=1",title:"Přeprava koní",desc:"Speciálně upravená vozidla a nakládací vybavení pro koně.",alt:"Kůň vedený po rampě do přepravního vozidla"},
+ {img:"https://www.fastlaneshipments.com/services/pet-care-1.jpg",fallback:"https://www.fastlaneshipments.com/services/pet-care-1.jpg?width=1000",title:"Psi a kočky",desc:"Různí domácí mazlíčci cestující s vyškoleným personálem.",alt:"Psi a kočky s pracovníkem přepravy vedle specializovaného vozidla"},
 ];
-const REVIEW_PHOTOS=[
+const REVIEW_PHOTOS = [
  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80",
@@ -407,201 +378,141 @@ const REVIEW_PHOTOS=[
  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
 ];
+const REVIEW_PHOTO_FALLBACKS = REVIEW_PHOTOS.map(url => url.split("?")[0]);
 
-const LANGUAGES={
- af:"Afrikaans",sq:"Albanian",am:"Amharic",ar:"Arabic",hy:"Armenian",az:"Azerbaijani",eu:"Basque",be:"Belarusian",bn:"Bengali",bs:"Bosnian",bg:"Bulgarian",ca:"Catalan",ceb:"Cebuano",zh:"Chinese",hr:"Croatian",cs:"Czech",da:"Danish",nl:"Dutch",en:"English",et:"Estonian",tl:"Filipino",fi:"Finnish",fr:"French",gl:"Galician",ka:"Georgian",de:"German",el:"Greek",gu:"Gujarati",ht:"Haitian Creole",ha:"Hausa",he:"Hebrew",hi:"Hindi",hu:"Hungarian",is:"Icelandic",ig:"Igbo",id:"Indonesian",ga:"Irish",it:"Italian",ja:"Japanese",jv:"Javanese",kn:"Kannada",kk:"Kazakh",km:"Khmer",ko:"Korean",ku:"Kurdish",ky:"Kyrgyz",lo:"Lao",lv:"Latvian",lt:"Lithuanian",lb:"Luxembourgish",mk:"Macedonian",ms:"Malay",ml:"Malayalam",mt:"Maltese",mr:"Marathi",mn:"Mongolian",my:"Myanmar",ne:"Nepali",no:"Norwegian",fa:"Persian",pl:"Polish",pt:"Portuguese",pa:"Punjabi",ro:"Romanian",ru:"Russian",sr:"Serbian",sk:"Slovak",sl:"Slovenian",es:"Spanish",sw:"Swahili",sv:"Swedish",ta:"Tamil",te:"Telugu",th:"Thai",tr:"Turkish",uk:"Ukrainian",ur:"Urdu",uz:"Uzbek",vi:"Vietnamese",cy:"Welsh",yo:"Yoruba",zu:"Zulu"
-};
+function safeText(value) {
+ return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function renderFleet() {
+ document.getElementById("fleet-container").innerHTML = FLEET.map((f, i) => `
+  <article class="fleet-card">
+   <img src="${f.img}" data-fallback="${f.fallback}" alt="${safeText(f.alt)}" loading="lazy" referrerpolicy="no-referrer">
+   <div class="fleet-caption"><h3>${safeText(f.title)}</h3><p>${safeText(f.desc)}</p></div>
+  </article>`).join("");
+}
+function renderReviews() {
+ document.getElementById("reviews-container").innerHTML = REVIEWS.map((r, i) => `
+  <article class="review-card">
+   <div class="stars" aria-label="Hodnocení pěti hvězdičkami">★★★★★</div>
+   <blockquote>„${safeText(r.text)}“</blockquote>
+   <div class="reviewer"><img src="${REVIEW_PHOTOS[i]}" data-fallback="${REVIEW_PHOTO_FALLBACKS[i]}" alt="" loading="lazy"><span><strong>${safeText(r.name)}</strong><small>${safeText(r.location)}</small></span></div>
+  </article>`).join("");
+}
+function renderFAQs() {
+ document.getElementById("faq-container").innerHTML = FAQ.map((f, i) => `
+  <article class="faq-item">
+   <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-${i}">
+    <span>${safeText(f.q)}</span><i class="fa-solid fa-chevron-down"></i>
+   </button>
+   <div class="faq-answer" id="faq-answer-${i}">${safeText(f.a)}</div>
+  </article>`).join("");
+}
 
-let activeLanguage="en";
-let translationRun=0;
-const cachePrefix="ba_translation_v3_";
-const getCache=(lang)=>{try{return JSON.parse(localStorage.getItem(cachePrefix+lang)||"null")}catch{return null}};
-const saveCache=(lang,data)=>{try{localStorage.setItem(cachePrefix+lang,JSON.stringify(data))}catch(e){console.info("Translation cache unavailable",e)}};
+/* Při chybě primárního obrázku se jednou zkusí záložní adresa. */
+document.addEventListener("error", function(event) {
+ const img = event.target;
+ if (!(img instanceof HTMLImageElement) || !img.dataset.fallback || img.dataset.fallbackUsed) return;
+ img.dataset.fallbackUsed = "true";
+ img.src = img.dataset.fallback;
+}, true);
 
-function safeText(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function renderFleet(){
- const s=getStrings();
- document.getElementById("fleet-container").innerHTML=FLEET.map(f=>`<article class="fleet-card"><img src="${f.img}" alt="${safeText(f.alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.fleet-card').classList.add('image-unavailable')"><div class="fleet-caption"><h3>${safeText(s[f.title])}</h3><p>${safeText(s[f.desc])}</p></div></article>`).join("");
-}
-function renderReviews(){
- const data=window.currentReviews||REVIEWS;
- document.getElementById("reviews-container").innerHTML=data.map((r,i)=>`<article class="review-card"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“${safeText(r.text)}”</blockquote><div class="reviewer"><img src="${REVIEW_PHOTOS[i]}" alt="" loading="lazy"><span><strong>${safeText(r.name)}</strong><small>${safeText(r.location)}</small></span></div></article>`).join("");
-}
-function renderFAQs(){
- const data=window.currentFAQ||FAQ;
- document.getElementById("faq-container").innerHTML=data.map((f,i)=>`<article class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-${i}"><span>${safeText(f.q)}</span><i class="fa-solid fa-chevron-down"></i></button><div class="faq-answer" id="faq-answer-${i}">${safeText(f.a)}</div></article>`).join("");
-}
-function getStrings(){return window.currentStrings||EN}
-function applyStrings(){
- document.querySelectorAll("[data-key]").forEach(el=>{
-  const key=el.getAttribute("data-key"),value=getStrings()[key];
-  if(typeof value==="string") el.textContent=value;
+function populateLanguages(filter = "") {
+ const list = document.getElementById("language-list");
+ list.innerHTML = "";
+ const languages = {cs:"Čeština",en:"Angličtina",de:"Němčina",fr:"Francouzština",sk:"Slovenština",pl:"Polština",it:"Italština",es:"Španělština",nl:"Nizozemština",hu:"Maďarština",ro:"Rumunština",uk:"Ukrajinština",ru:"Ruština",hr:"Chorvatština",sl:"Slovinština",da:"Dánština",sv:"Švédština",no:"Norština",fi:"Finština",pt:"Portugalština",el:"Řečtina",bg:"Bulharština",lt:"Litevština",lv:"Lotyština",et:"Estonština"};
+ Object.entries(languages).filter(([code,name]) => !filter || name.toLowerCase().includes(filter.toLowerCase()) || code.includes(filter.toLowerCase())).forEach(([code,name]) => {
+  const button = document.createElement("button");
+  button.type = "button"; button.className = "lang-option";
+  const label = document.createElement("span"); label.textContent = name;
+  const short = document.createElement("small"); short.textContent = code.toUpperCase();
+  button.append(label, short);
+  button.addEventListener("click", () => {
+   if (code === "cs") {
+    document.documentElement.lang = "cs";
+    document.getElementById("current-lang").textContent = "CS";
+   } else {
+    alert("Tato verze webu je připravena v češtině. Další jazykové verze nejsou v této kopii aktivní.");
+   }
+   closeLanguageMenu();
+  });
+  list.append(button);
  });
- document.getElementById("current-lang").textContent=activeLanguage.toUpperCase();
- document.documentElement.lang=activeLanguage;
- document.getElementById("tracking-input").placeholder=activeLanguage==="en"?"Transport ID (e.g. BA-12345)":(getStrings().tracking_placeholder||"Transport ID");
 }
-function flattenContent(){
- const entries=[];
- Object.entries(EN).forEach(([k,v])=>entries.push({id:"s:"+k,text:v}));
- REVIEWS.forEach((r,i)=>["name","location","text"].forEach(k=>entries.push({id:`r:${i}:${k}`,text:r[k]})));
- FAQ.forEach((f,i)=>["q","a"].forEach(k=>entries.push({id:`f:${i}:${k}`,text:f[k]})));
- return entries;
-}
-
-/* MyMemory is used as a free translation endpoint. Requests are throttled,
-   retried, cached locally and safely fall back to English if unavailable. */
-async function translateOne(text,lang){
- const url=`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en%7C${encodeURIComponent(lang)}`;
- let lastError;
- for(let attempt=0;attempt<2;attempt++){
-  try{
-   const response=await fetch(url,{method:"GET",headers:{"Accept":"application/json"},signal:AbortSignal.timeout(14000)});
-   if(!response.ok) throw new Error("Translation service returned "+response.status);
-   const payload=await response.json();
-   const translated=payload?.responseData?.translatedText;
-   if(translated && payload.responseStatus===200) return decodeHtml(translated);
-   if(translated && !/MYMEMORY WARNING/i.test(translated)) return decodeHtml(translated);
-   throw new Error(payload?.responseDetails||"No translation returned");
-  }catch(err){lastError=err;if(attempt===0) await new Promise(r=>setTimeout(r,700))}
- }
- throw lastError||new Error("Translation unavailable");
-}
-function decodeHtml(input){
- const el=document.createElement("textarea");el.innerHTML=input;return el.value;
-}
-async function translateEntries(entries,lang,runId){
- const output={};let cursor=0;let completed=0;let failed=0;
- const workers=Array.from({length:8},async()=>{
-  while(cursor<entries.length){
-   const index=cursor++;const item=entries[index];
-   try{output[item.id]=await translateOne(item.text,lang)}catch(e){output[item.id]=item.text;failed++}
-   completed++;
-   // Update quietly in the background; never block or dim the visitor's page.
-  }
- });
- await Promise.all(workers);
- return {output,failed};
-}
-function unpackTranslations(output){
- const strings={...EN},reviews=REVIEWS.map(r=>({...r})),faqs=FAQ.map(f=>({...f}));
- Object.keys(EN).forEach(k=>{strings[k]=output["s:"+k]||EN[k]});
- REVIEWS.forEach((r,i)=>["name","location","text"].forEach(k=>reviews[i][k]=output[`r:${i}:${k}`]||r[k]));
- FAQ.forEach((f,i)=>["q","a"].forEach(k=>faqs[i][k]=output[`f:${i}:${k}`]||f[k]));
- return {strings,reviews,faqs};
-}
-async function setLanguage(lang){
- if(!LANGUAGES[lang]) lang="en";
- const runId=++translationRun;
- activeLanguage=lang;
- if(lang==="en"){
-  window.currentStrings={...EN};window.currentReviews=REVIEWS;window.currentFAQ=FAQ;
-  applyStrings();renderFleet();renderReviews();renderFAQs();closeLanguageMenu();return;
- }
- const cached=getCache(lang);
- if(cached?.strings&&cached?.reviews&&cached?.faq){
-  window.currentStrings=cached.strings;window.currentReviews=cached.reviews;window.currentFAQ=cached.faq;
-  applyStrings();renderFleet();renderReviews();renderFAQs();closeLanguageMenu();return;
- }
- // Translate in the background without showing a prompt, spinner or blocking overlay.
- const toast=document.getElementById("translation-toast");
- try{
-  const {output,failed}=await translateEntries(flattenContent(),lang,runId);
-  if(runId!==translationRun)return;
-  const unpacked=unpackTranslations(output);
-  window.currentStrings=unpacked.strings;window.currentReviews=unpacked.reviews;window.currentFAQ=unpacked.faqs;
-  saveCache(lang,{strings:unpacked.strings,reviews:unpacked.reviews,faq:unpacked.faq});
-  applyStrings();renderFleet();renderReviews();renderFAQs();
-  // Any unavailable phrase quietly remains in English; the page stays usable.
-  try{localStorage.setItem("ba_preferred_language",lang)}catch{}
- }catch(error){
-  console.error("Translation error:",error);
-  if(runId===translationRun){
-   window.currentStrings={...EN};window.currentReviews=REVIEWS;window.currentFAQ=FAQ;
-   applyStrings();renderFleet();renderReviews();renderFAQs();
-   // Translation failure is silent; visitors continue seeing the original English page.
-  }
- }finally{
-  closeLanguageMenu();
- }
-}
-function closeLanguageMenu(){
+function closeLanguageMenu() {
  document.getElementById("lang-menu").classList.remove("open");
- document.getElementById("lang-toggle").setAttribute("aria-expanded","false");
+ document.getElementById("lang-toggle").setAttribute("aria-expanded", "false");
 }
-function populateLanguages(filter=""){
- const list=document.getElementById("language-list");list.innerHTML="";
- Object.entries(LANGUAGES).filter(([code,name])=>!filter||name.toLowerCase().includes(filter.toLowerCase())||code.includes(filter.toLowerCase())).sort((a,b)=>a[1].localeCompare(b[1])).forEach(([code,name])=>{
-  const button=document.createElement("button");button.type="button";button.className="lang-option";
-  const label=document.createElement("span");label.textContent=name;
-  const short=document.createElement("small");short.textContent=code.toUpperCase();
-  button.append(label,short);button.addEventListener("click",()=>setLanguage(code));list.append(button);
- });
-}
-function toggleLanguageMenu(){
- const menu=document.getElementById("lang-menu"),open=!menu.classList.contains("open");
- menu.classList.toggle("open",open);document.getElementById("lang-toggle").setAttribute("aria-expanded",String(open));
- if(open)document.getElementById("lang-search").focus();
-}
-function detectLanguage(){
- const browser=(navigator.languages&&navigator.languages[0])||navigator.language||"en";
- const code=browser.toLowerCase().split("-")[0];
- return LANGUAGES[code]?code:"en";
-}
-
-document.getElementById("lang-toggle").addEventListener("click",toggleLanguageMenu);
-document.getElementById("lang-search").addEventListener("input",e=>populateLanguages(e.target.value));
-document.addEventListener("click",e=>{
- if(!e.target.closest(".lang-wrap"))closeLanguageMenu();
+document.getElementById("lang-toggle").addEventListener("click", () => {
+ const menu = document.getElementById("lang-menu");
+ const open = !menu.classList.contains("open");
+ menu.classList.toggle("open", open);
+ document.getElementById("lang-toggle").setAttribute("aria-expanded", String(open));
+ if (open) document.getElementById("lang-search").focus();
 });
-document.getElementById("menu-toggle").addEventListener("click",()=>{
- const nav=document.getElementById("mobile-links"),open=nav.classList.toggle("open");
- document.getElementById("menu-toggle").setAttribute("aria-expanded",String(open));
- document.getElementById("menu-toggle").innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
+document.getElementById("lang-search").addEventListener("input", e => populateLanguages(e.target.value));
+document.addEventListener("click", e => {
+ if (!e.target.closest(".lang-wrap")) closeLanguageMenu();
 });
-document.querySelectorAll("#mobile-links a").forEach(a=>a.addEventListener("click",()=>{
+document.getElementById("menu-toggle").addEventListener("click", () => {
+ const nav = document.getElementById("mobile-links");
+ const open = nav.classList.toggle("open");
+ document.getElementById("menu-toggle").setAttribute("aria-expanded", String(open));
+ document.getElementById("menu-toggle").innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+});
+document.querySelectorAll("#mobile-links a").forEach(a => a.addEventListener("click", () => {
  document.getElementById("mobile-links").classList.remove("open");
- document.getElementById("menu-toggle").setAttribute("aria-expanded","false");
- document.getElementById("menu-toggle").innerHTML='<i class="fa-solid fa-bars"></i>';
+ document.getElementById("menu-toggle").setAttribute("aria-expanded", "false");
+ document.getElementById("menu-toggle").innerHTML = '<i class="fa-solid fa-bars"></i>';
 }));
-document.getElementById("faq-container").addEventListener("click",e=>{
- const button=e.target.closest(".faq-question");if(!button)return;
- const item=button.closest(".faq-item"),wasOpen=item.classList.contains("active");
- document.querySelectorAll(".faq-item").forEach(el=>{el.classList.remove("active");el.querySelector("button").setAttribute("aria-expanded","false")});
- if(!wasOpen){item.classList.add("active");button.setAttribute("aria-expanded","true")}
+document.getElementById("faq-container").addEventListener("click", e => {
+ const button = e.target.closest(".faq-question");
+ if (!button) return;
+ const item = button.closest(".faq-item");
+ const wasOpen = item.classList.contains("active");
+ document.querySelectorAll(".faq-item").forEach(el => {
+  el.classList.remove("active");
+  el.querySelector("button").setAttribute("aria-expanded", "false");
+ });
+ if (!wasOpen) {
+  item.classList.add("active");
+  button.setAttribute("aria-expanded", "true");
+ }
 });
-document.getElementById("track-form").addEventListener("submit",e=>{
+document.getElementById("track-form").addEventListener("submit", e => {
  e.preventDefault();
- const id=document.getElementById("tracking-input").value.trim();
- if(!id)return;
- const message=`Hello Bianka Animalier, I would like an update on my pet transport. My Transport ID is: ${id}`;
- const result=document.getElementById("track-result");
- result.textContent="Your request is ready. Select the WhatsApp link to send your Transport ID to the transport team.";
- const link=document.createElement("a");link.href="https://wa.me/4367858226893?text="+encodeURIComponent(message);
- link.target="_blank";link.rel="noopener";link.className="btn btn-primary";link.style.marginTop="12px";link.textContent="Send tracking request on WhatsApp";
- result.append(document.createElement("br"),link);result.style.display="block";
+ const id = document.getElementById("tracking-input").value.trim();
+ if (!id) return;
+ const message = `Dobrý den, Bianka Animalier, chtěl/a bych získat aktuální informace o přepravě svého mazlíčka. ID přepravy: ${id}`;
+ const result = document.getElementById("track-result");
+ result.textContent = "Vaše žádost je připravena. Kliknutím na odkaz WhatsApp odešlete ID přepravy našemu týmu.";
+ const link = document.createElement("a");
+ link.href = "https://wa.me/4367858226893?text=" + encodeURIComponent(message);
+ link.target = "_blank"; link.rel = "noopener"; link.className = "btn btn-primary";
+ link.style.marginTop = "12px"; link.textContent = "Odeslat žádost přes WhatsApp";
+ result.append(document.createElement("br"), link);
+ result.style.display = "block";
 });
-function cookieInit(){
- let consent=null;try{consent=localStorage.getItem("ba_cookie_consent")}catch{}
- if(!consent)setTimeout(()=>document.getElementById("cookie-banner").classList.add("show"),900);
+function cookieInit() {
+ let consent = null;
+ try { consent = localStorage.getItem("ba_cookie_consent"); } catch {}
+ if (!consent) setTimeout(() => document.getElementById("cookie-banner").classList.add("show"), 900);
 }
-function setCookie(value){
- try{localStorage.setItem("ba_cookie_consent",value)}catch{}
+function setCookie(value) {
+ try { localStorage.setItem("ba_cookie_consent", value); } catch {}
  document.getElementById("cookie-banner").classList.remove("show");
 }
-document.getElementById("cookie-yes").addEventListener("click",()=>setCookie("accepted"));
-document.getElementById("cookie-no").addEventListener("click",()=>setCookie("declined"));
+document.getElementById("cookie-yes").addEventListener("click", () => setCookie("accepted"));
+document.getElementById("cookie-no").addEventListener("click", () => setCookie("declined"));
 
-async function init(){
- document.getElementById("year").textContent=new Date().getFullYear();
- window.currentStrings={...EN};window.currentReviews=REVIEWS;window.currentFAQ=FAQ;
- populateLanguages();applyStrings();renderFleet();renderReviews();renderFAQs();cookieInit();
- let saved=null;try{saved=localStorage.getItem("ba_preferred_language")}catch{}
- const detected=detectLanguage();
- // Apply the visitor's saved choice; otherwise translate automatically to the browser language.
- await setLanguage(saved&&LANGUAGES[saved]?saved:detected);
+function init() {
+ document.getElementById("year").textContent = new Date().getFullYear();
+ populateLanguages();
+ renderFleet();
+ renderReviews();
+ renderFAQs();
+ cookieInit();
 }
-document.addEventListener("DOMContentLoaded",init);
+document.addEventListener("DOMContentLoaded", init);
 </script>
 </body>
 </html>
