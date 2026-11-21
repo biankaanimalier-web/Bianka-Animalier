@@ -30,14 +30,33 @@
   .card-hover:hover .service-icon{transform:scale(1.1);background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff}
   .card-hover:hover .service-icon i{color:#fff}
   .stat-number{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .lang-dropdown{display:none}.lang-dropdown.show{display:block}
+  .lang-dropdown{display:none}
+  .lang-dropdown.show{display:block}
+  #lang-dropdown{
+    position:fixed;
+    top:auto;
+    right:12px;
+    left:auto;
+    width:min(320px, calc(100vw - 24px));
+    max-height:min(70vh, 460px);
+    overflow-y:auto;
+    z-index:70;
+    -webkit-overflow-scrolling:touch;
+  }
+  @media (max-width:640px){
+    #lang-dropdown{
+      right:8px;
+      width:calc(100vw - 16px);
+      max-height:60vh;
+    }
+  }
   .lang-modal{transition:opacity .3s ease,visibility .3s ease}
   .lang-modal.hidden{opacity:0;visibility:hidden;pointer-events:none}
   .lang-modal.visible{opacity:1;visibility:visible;pointer-events:auto}
   .cookie-bar{transform:translateY(100%);transition:transform .35s ease}
   .cookie-bar.show{transform:translateY(0)}
   .rotate-180{transform:rotate(180deg)}
-  .translating{opacity:.6;transition:opacity .2s}
+  .translating{opacity:.85;transition:opacity .2s}
   @media(max-width:640px){.hero-title{font-size:2.1rem!important;line-height:1.2!important}.whatsapp-float{bottom:20px;right:20px}}
 </style>
 </head>
@@ -93,8 +112,8 @@
           <button onclick="toggleLangDropdown()" class="flex items-center gap-1.5 text-gray-500 hover:text-blue-600 text-sm font-medium px-2 py-1">
             <i class="fas fa-globe text-xs"></i><span id="current-lang">EN</span><i class="fas fa-chevron-down text-[10px]"></i>
           </button>
-          <div id="lang-dropdown" class="lang-dropdown absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-2 border border-gray-100 max-h-80 overflow-y-auto z-50">
-            <div class="px-3 pb-2 border-b border-gray-100">
+          <div id="lang-dropdown" class="lang-dropdown bg-white rounded-xl shadow-2xl py-2 border border-gray-100">
+            <div class="px-3 pb-2 border-b border-gray-100 sticky top-0 bg-white">
               <input id="lang-search" type="text" placeholder="Search language..." class="w-full text-sm px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-blue-400">
             </div>
             <div id="language-list" class="flex flex-col pt-1"></div>
@@ -316,52 +335,33 @@
 <a href="https://wa.me/4367858226893" target="_blank" class="whatsapp-float w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl hover:bg-green-600 transition"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-/* =========================================================
-   UNIVERSAL AUTO-TRANSLATE
-   Uses Google's public translate endpoint (no API key).
-   Translates any language the device uses, on the fly.
-   ========================================================= */
-
-// Base English strings (this is the source of truth)
 const EN = {
   modal_title:"Welcome!",
   modal_detected_prefix:"We detected your language:",
   modal_detected_suffix:"Switch to it?",
   modal_yes:"Yes, switch",
   modal_no:"Stay in English",
-
   cookie_text:"We use cookies to enhance your experience.",
-  cookie_accept:"Accept",
-  cookie_decline:"Decline",
-
+  cookie_accept:"Accept", cookie_decline:"Decline",
   nav_home:"Home", nav_services:"Services", nav_fleet:"Our Fleet", nav_reviews:"Reviews",
   nav_track:"Track Order", nav_faq:"FAQ", nav_whatsapp:"WhatsApp",
-
   hero_badge:"Trusted by 2,400+ families across Europe",
-  hero_title_1:"Safe, Stress-Free",
-  hero_title_2:"Pet Transport",
+  hero_title_1:"Safe, Stress-Free", hero_title_2:"Pet Transport",
   hero_subtitle:"Professional door-to-door pet relocation across Europe. Fully licensed and insured with GPS tracking.",
-  hero_cta:"Get a Free Quote",
-  hero_cta2:"Our Services",
-  hero_card_title:"GPS Tracked",
-  hero_card_sub:"Live updates 24/7",
-
+  hero_cta:"Get a Free Quote", hero_cta2:"Our Services",
+  hero_card_title:"GPS Tracked", hero_card_sub:"Live updates 24/7",
   stat_safe:"Safe Delivery", stat_pets:"Happy Pets", stat_rating:"Client Rating",
-
   trust_1:"Fully Licensed", trust_1_sub:"EU Pet Transport",
   trust_2:"Fully Insured", trust_2_sub:"€2M Coverage",
   trust_3:"Vet Approved", trust_3_sub:"Certified Handlers",
   trust_4:"GPS Tracked", trust_4_sub:"Real-time Updates",
-
   services_label:"What We Offer",
   services_title:"Professional Pet Transport Services",
   services_subtitle:"From short local trips to cross-border relocations.",
   step1_title:"1. Gentle Pickup", step1_desc:"Our trained agents collect your pet with care.",
   step2_title:"2. Safe Transport", step2_desc:"Climate-controlled vehicles with regular stops.",
   step3_title:"3. Happy Arrival", step3_desc:"Door-to-door delivery, comfortable and happy.",
-
-  fleet_label:"Our Vehicles",
-  fleet_title:"Our Pet Delivery Fleet",
+  fleet_label:"Our Vehicles", fleet_title:"Our Pet Delivery Fleet",
   fleet_subtitle:"Specialized vehicles for safe transport.",
   fleet_van:"Pet Delivery Van", fleet_van_desc:"Climate controlled & GPS tracked",
   fleet_agent:"Professional Agents", fleet_agent_desc:"Trained pet handlers",
@@ -369,23 +369,15 @@ const EN = {
   fleet_truck:"Long Distance Trucks", fleet_truck_desc:"For cross-country moves",
   fleet_door:"Door-to-Door Service", fleet_door_desc:"We bring pets to your home",
   fleet_happy:"Happy Arrivals", fleet_happy_desc:"Safe and stress-free",
-
-  reviews_label:"Testimonials",
-  reviews_title:"What Our Customers Say",
+  reviews_label:"Testimonials", reviews_title:"What Our Customers Say",
   reviews_subtitle:"Trusted by pet owners across Europe.",
-
   track_title:"Track Your Delivery",
   track_subtitle:"Enter your Transport ID to see real-time status.",
-  track_status_label:"Status",
-  track_eta_label:"Estimated Arrival",
+  track_status_label:"Status", track_eta_label:"Estimated Arrival",
   track_picked:"Picked Up", track_departed:"Departed",
   track_transit:"Transit", track_delivered:"Delivered",
-  track_current:"Current Location",
-  btn_track:"Track",
-
-  faq_title:"Frequently Asked Questions",
-  faq_subtitle:"Everything you need to know.",
-
+  track_current:"Current Location", btn_track:"Track",
+  faq_title:"Frequently Asked Questions", faq_subtitle:"Everything you need to know.",
   footer_desc:"Licensed across all EU states.",
   footer_links:"Quick Links", footer_contact:"Contact Us",
   footer_eu:"Operating across all EU States",
@@ -433,7 +425,6 @@ const fleetImages = [
   { img:"https://kimi-web-img.moonshot.cn/img/tgs-group.com/83928ff9dfd809a38f2f5e0f9f63b4279d6bd743.jpg", fallback:"https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80", titleKey:"fleet_happy", descKey:"fleet_happy_desc" }
 ];
 
-/* --- Big list of languages so dropdown can show them all --- */
 const LANG_MAP = {
   af:"Afrikaans", sq:"Shqip", am:"አማርኛ", ar:"العربية", hy:"Հայերեն", az:"Azərbaycan",
   eu:"Euskara", be:"Беларуская", bn:"বাংলা", bs:"Bosanski", bg:"Български", ca:"Català",
@@ -457,39 +448,49 @@ const LANG_MAP = {
 };
 
 let currentLang = 'en';
-let translatedStrings = { ...EN };           // current UI strings
-let translatedReviews = EN_REVIEWS;          // current reviews
-let translatedFAQ = EN_FAQ;                  // current FAQ
+let translatedStrings = { ...EN };
+let translatedReviews = EN_REVIEWS;
+let translatedFAQ = EN_FAQ;
 
-/* --- In-memory cache so we only translate once per language --- */
 const translationCache = { en: { strings: { ...EN }, reviews: EN_REVIEWS, faq: EN_FAQ } };
 
-/* ============================================================
-   GOOGLE TRANSLATE (unofficial public endpoint - no API key)
-   ============================================================ */
-async function googleTranslate(text, targetLang){
+async function translateText(text, targetLang){
   if (!text || targetLang === 'en') return text;
-  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+  if (text.length > 480) text = text.slice(0, 480);
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`;
   try {
     const res = await fetch(url);
     const data = await res.json();
-    return data[0].map(seg => seg[0]).join('');
+    if (data && data.responseData && data.responseData.translatedText) {
+      return decodeEntities(data.responseData.translatedText);
+    }
+    return text;
   } catch (e) {
-    console.warn('Translate failed:', text, e);
-    return text; // fallback to English on error
+    console.warn('Translate failed for:', text, e);
+    return text;
   }
 }
 
-/* Translate a batch of strings in parallel */
-async function translateBatch(items, targetLang){
-  return Promise.all(items.map(item => googleTranslate(item, targetLang)));
+function decodeEntities(str){
+  const txt = document.createElement('textarea');
+  txt.innerHTML = str;
+  return txt.value;
 }
 
-/* Translate an array of {name, location, text} */
+async function translateArray(items, targetLang){
+  const out = [];
+  for (let i = 0; i < items.length; i++){
+    const t = await translateText(items[i], targetLang);
+    out.push(t);
+    await new Promise(r => setTimeout(r, 120));
+  }
+  return out;
+}
+
 async function translateReviews(reviews, targetLang){
   const flat = [];
   reviews.forEach(r => { flat.push(r.name, r.location, r.text); });
-  const out = await translateBatch(flat, targetLang);
+  const out = await translateArray(flat, targetLang);
   const result = [];
   for (let i = 0; i < reviews.length; i++){
     result.push({
@@ -504,7 +505,7 @@ async function translateReviews(reviews, targetLang){
 async function translateFAQ(faqs, targetLang){
   const flat = [];
   faqs.forEach(f => { flat.push(f.q, f.a); });
-  const out = await translateBatch(flat, targetLang);
+  const out = await translateArray(flat, targetLang);
   const result = [];
   for (let i = 0; i < faqs.length; i++){
     result.push({ q: out[i*2], a: out[i*2 + 1] });
@@ -512,9 +513,6 @@ async function translateFAQ(faqs, targetLang){
   return result;
 }
 
-/* ============================================================
-   APPLY LANGUAGE
-   ============================================================ */
 async function setLanguage(lang){
   if (!lang) lang = 'en';
   const isEn = (lang === 'en');
@@ -527,67 +525,62 @@ async function setLanguage(lang){
     translatedStrings = { ...EN };
     translatedReviews = EN_REVIEWS;
     translatedFAQ = EN_FAQ;
-    applyStrings();
-    renderFleet();
-    renderReviews();
-    renderFAQs();
+    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
     return;
   }
 
-  // If cached, use cache
   if (translationCache[lang]){
     translatedStrings = translationCache[lang].strings;
     translatedReviews = translationCache[lang].reviews;
     translatedFAQ = translationCache[lang].faq;
-    applyStrings();
-    renderFleet();
-    renderReviews();
-    renderFAQs();
+    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
     return;
   }
 
-  // Show loading feel
   document.body.classList.add('translating');
-
-  // Translate all UI strings, reviews, FAQ
-  const keys = Object.keys(EN);
-  const stringValues = keys.map(k => EN[k]);
+  showLoadingToast(true);
 
   try {
-    const [translatedStringValues, tReviews, tFAQ] = await Promise.all([
-      translateBatch(stringValues, lang),
-      translateReviews(EN_REVIEWS, lang),
-      translateFAQ(EN_FAQ, lang)
-    ]);
+    const keys = Object.keys(EN);
+    const stringValues = keys.map(k => EN[k]);
+    const tStrings = await translateArray(stringValues, lang);
+    const tReviews = await translateReviews(EN_REVIEWS, lang);
+    const tFAQ = await translateFAQ(EN_FAQ, lang);
 
     const strings = {};
-    keys.forEach((k, i) => { strings[k] = translatedStringValues[i]; });
+    keys.forEach((k, i) => { strings[k] = tStrings[i]; });
 
     translationCache[lang] = { strings, reviews: tReviews, faq: tFAQ };
-
     translatedStrings = strings;
     translatedReviews = tReviews;
     translatedFAQ = tFAQ;
 
-    applyStrings();
-    renderFleet();
-    renderReviews();
-    renderFAQs();
-  } catch (e) {
-    console.error('Translation failed, reverting to English', e);
+    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
+  } catch(e){
+    console.error(e);
     translatedStrings = { ...EN };
     translatedReviews = EN_REVIEWS;
     translatedFAQ = EN_FAQ;
-    applyStrings();
-    renderFleet();
-    renderReviews();
-    renderFAQs();
+    applyStrings(); renderFleet(); renderReviews(); renderFAQs();
   } finally {
     document.body.classList.remove('translating');
+    showLoadingToast(false);
   }
 }
 
-/* Apply translated strings to every [data-key] */
+function showLoadingToast(show){
+  let t = document.getElementById('loading-toast');
+  if (!t){
+    t = document.createElement('div');
+    t.id = 'loading-toast';
+    t.className = 'fixed top-24 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-sm px-5 py-2.5 rounded-full shadow-lg z-[80] transition-opacity';
+    t.style.display = 'none';
+    t.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Translating...';
+    document.body.appendChild(t);
+  }
+  t.style.display = show ? 'block' : 'none';
+}
+
 function applyStrings(){
   document.querySelectorAll('[data-key]').forEach(el => {
     const k = el.getAttribute('data-key');
@@ -596,20 +589,18 @@ function applyStrings(){
     }
   });
 
-  // Modal
   document.getElementById('modal-title').innerText = translatedStrings.modal_title;
   document.getElementById('modal-yes').innerText = translatedStrings.modal_yes;
   document.getElementById('modal-no').innerText = translatedStrings.modal_no;
 
-  // Modal text is a composite — rebuild it
   const detected = document.getElementById('detected-country').innerText;
   document.getElementById('modal-text').innerHTML =
     `${translatedStrings.modal_detected_prefix} <span class="font-semibold text-blue-600">${detected}</span> ${translatedStrings.modal_detected_suffix || ''}`;
+
+  const trackInput = document.getElementById('tracking-input');
+  if (trackInput) trackInput.setAttribute('placeholder', translatedStrings.track_placeholder || 'Transport ID');
 }
 
-/* ============================================================
-   RENDERERS
-   ============================================================ */
 function renderFleet(){
   const t = translatedStrings;
   document.getElementById('fleet-container').innerHTML = fleetImages.map(f => `
@@ -655,9 +646,6 @@ function toggleFaq(i){
   if (a.classList.contains('hidden')) { a.classList.remove('hidden'); ic.classList.add('rotate-180'); }
 }
 
-/* ============================================================
-   LANGUAGE DROPDOWN
-   ============================================================ */
 function populateLanguages(filter = ''){
   const c = document.getElementById('language-list');
   c.innerHTML = '';
@@ -676,28 +664,28 @@ function populateLanguages(filter = ''){
 }
 
 function toggleLangDropdown(){
-  document.getElementById('lang-dropdown').classList.toggle('show');
+  const dd = document.getElementById('lang-dropdown');
+  const btn = dd.previousElementSibling;
+  const rect = btn.getBoundingClientRect();
+  dd.style.top = (rect.bottom + 8) + 'px';
+  dd.style.right = Math.max(8, window.innerWidth - rect.right) + 'px';
+  dd.classList.toggle('show');
 }
+
 document.addEventListener('click', e => {
   if (!e.target.closest('.relative')) document.getElementById('lang-dropdown').classList.remove('show');
 });
-
 document.addEventListener('input', e => {
   if (e.target.id === 'lang-search') populateLanguages(e.target.value);
 });
+window.addEventListener('scroll', () => document.getElementById('lang-dropdown').classList.remove('show'), { passive:true });
+window.addEventListener('resize', () => document.getElementById('lang-dropdown').classList.remove('show'));
 
-/* ============================================================
-   MODAL
-   ============================================================ */
 function closeLangModal(shouldSwitch){
   const m = document.getElementById('lang-modal');
   m.classList.add('hidden');
   if (!shouldSwitch) setLanguage('en');
 }
-
-/* ============================================================
-   MISC
-   ============================================================ */
 function trackOrder(){
   const v = document.getElementById('tracking-input').value.trim();
   if (!v) return;
@@ -712,25 +700,20 @@ function showCookieConsent(){ if (!localStorage.getItem('cookieConsent')) setTim
 function acceptCookies(){ localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookie-consent').classList.remove('show'); }
 function declineCookies(){ localStorage.setItem('cookieConsent','declined'); document.getElementById('cookie-consent').classList.remove('show'); }
 
-/* ============================================================
-   INIT — AUTO-DETECT + AUTO-TRANSLATE ANY DEVICE LANGUAGE
-   ============================================================ */
 async function init(){
   populateLanguages();
-  applyStrings();          // start with English
+  applyStrings();
   renderFleet();
   renderReviews();
   renderFAQs();
   showCookieConsent();
 
-  // 1. Already chosen a language?
   const stored = localStorage.getItem('preferredLang');
   if (stored && stored !== 'en'){
     setLanguage(stored);
     return;
   }
 
-  // 2. Detect device language
   const raw = navigator.language || navigator.userLanguage || 'en';
   const deviceLang = raw.split('-')[0].toLowerCase();
 
@@ -739,16 +722,11 @@ async function init(){
     return;
   }
 
-  // 3. Show modal with detected language name
   const friendlyName = LANG_MAP[deviceLang] || raw;
   document.getElementById('detected-country').innerText = friendlyName;
-  const modal = document.getElementById('lang-modal');
-  modal.classList.remove('hidden');
+  document.getElementById('lang-modal').classList.remove('hidden');
 
-  // 4. Auto-translate immediately (don't wait for the click)
   await setLanguage(deviceLang);
-
-  // 5. Store so it's remembered
   localStorage.setItem('preferredLang', deviceLang);
 }
 
